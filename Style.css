@@ -20,7 +20,7 @@
     height: 100vh;
     width: 100%;
     background-color: var(--color3-bg-color);
-    background-image: ;
+    background-image: url(img/foto1.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
