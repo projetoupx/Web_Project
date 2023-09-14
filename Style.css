@@ -1,9 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;400&display=swap');
 
+/*header*/
 :root {
     --color1-bg-color: #1B241C;
     --color2-bg-color: #5CC465;
-    --color3-bg-color: #8DB891;
+    --color3-bg-color: #f6f6f6;
     --color4-bg-color: #143617;
     --color5-bg-color: #5A755D;
   }
@@ -12,14 +13,15 @@
     margin: 0;
     padding: 0;
     font-family: 'Raleway', sans-serif;
-    color: var(--color1-bg-color);
+    color: var(--color3-bg-color);
     box-sizing: border-box;
 }
 
 .header-container {
     height: 100vh;
     width: 100%;
-    background-color: var(--color3-bg-color);
+    background-image: url(img/fundo1.png);
+    background-color: var(--color1-bg-color);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -31,12 +33,12 @@
 header > .photo{
     position: absolute;
     right: 7%;
-    background-image: url(img/foto-com-fundo.jpg);
+    background-image: url(img/foto1.png);
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
     display: flex;
-    height: 100vh;
+    height: 50vh;
     width: 40%;
     z-index: 0;
 }
@@ -47,7 +49,7 @@ header > .text{
 .header-container h1{
     text-transform: uppercase;
     letter-spacing: 1rem;
-    font-size: 3em;
+    font-size: 5em;
 }
 
 .header {
@@ -78,3 +80,5 @@ nav > a {
     padding: 0 20px;
     text-decoration: none;
 }
+
+/*Main*/
