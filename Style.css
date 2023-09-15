@@ -13,11 +13,10 @@
     margin: 0;
     padding: 0;
     font-family: 'Raleway', sans-serif;
-    color: var(--color4-bg-color);
     box-sizing: border-box;
 }
 
-.header-container {
+header {
     height: 100vh;
     width: 100%;
     background-image: url(img/fundo1.png);
@@ -32,6 +31,7 @@
     box-sizing: border-box;
     padding: 0 112px;
     position: relative;
+    color: var(--color4-bg-color);
 }
 header > .photo{
     position: absolute;
@@ -49,18 +49,18 @@ header > .text{
     z-index: 1;
 }
 
-.header-container h1{
+header h1{
 
     text-transform: uppercase;
     letter-spacing: 1rem;
     font-size: 5em;
 }
-.header-container h2{
+header h2{
     letter-spacing: 0.5rem;
     font-size: 1em;
 }
 
-.header {
+.header-top {
     display: flex;
     position: absolute;
     align-items: center;
@@ -75,14 +75,14 @@ header > .text{
     
 }
 
-.header > .logo{
+.header-top > .logo{
     margin-left: 2vw;
 }
-.header > .logo h3{
+.header-top > .logo h3{
     color: var(--color4-bg-color); 
 }
 
-.header > .menus{
+.header-top > .menus{
     margin-right: 2vw;
 }
 
@@ -106,4 +106,16 @@ nav > div > a:hover {
 
 main{
     background-color: var(--color4-bg-color);
+    color: var(--color3-bg-color);;
+}
+
+section{
+    width: 100%;
+    height: 75vh;
+}
+.sec1{
+    background-color: var(--color4-bg-color);
+}
+.sec2{
+    background-color: var(--color5-bg-color);
 }
