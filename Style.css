@@ -20,8 +20,8 @@ header {
     height: 100vh;
     width: 100%;
     background-image: url(img/fundo1.png);
-    background-size: 25% 25vh;
-    background-repeat:repeat-y;
+    background-size: 23.13% 25vh;
+    background-repeat: repeat-y;
     background-color: var(--color3-bg-color);
     background-position: right;
     display: flex;
@@ -34,9 +34,9 @@ header {
     color: var(--color4-bg-color);
 }
 
-header > .photo{
+header>.photo {
     position: absolute;
-    right: 10%;
+    right: 8.2%;
     background-image: url(img/foto1.png);
     background-size: contain;
     background-position: center;
@@ -47,18 +47,18 @@ header > .photo{
     z-index: 0;
 }
 
-header > .text{
+header>.text {
     z-index: 1;
 }
 
-header h1{
+header h1 {
 
     text-transform: uppercase;
     letter-spacing: 1rem;
     font-size: 5em;
 }
 
-header h2{
+header h2 {
     letter-spacing: 0.5rem;
     font-size: 1em;
 }
@@ -69,64 +69,68 @@ header h2{
     align-items: center;
     top: 0;
     left: 0;
-    width: 75%;
+    width: 79%;
     height: 10vh;
-    justify-content:space-between;
+    justify-content: space-between;
     padding: 25px 0%;
     font-size: 1.5em;
     z-index: 5;
-    
+
 }
 
-.header-top > .logo{
+.header-top>.logo {
     margin-left: 2vw;
 }
-.header-top > .logo h3{
-    color: var(--color4-bg-color); 
+
+.header-top>.logo h3 {
+    color: var(--color4-bg-color);
 }
 
-.header-top > .menus{
+.header-top>.menus {
     margin-right: 2vw;
 }
 
-nav > div {
+nav>div {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     width: 5em;
 }
-nav > div > a {
-    color: var(--color4-bg-color);;
+
+nav>div>a {
+    color: var(--color4-bg-color);
+    ;
     text-decoration: none;
     transition: .4s ease-out;
-    
+
 }
-nav > div > a:hover {
+
+nav>div>a:hover {
     letter-spacing: 0.5rem;
 }
 
 
 /*Main*/
 
-main{
+main {
     background-color: var(--color4-bg-color);
-    
+
 }
 
 /*sections*/
-section{
+section {
     width: 100%;
     height: 75vh;
 }
 
-.sec1{
+.sec1 {
     background-color: var(--color4-bg-color);
     color: var(--color3-bg-color);
     display: flex;
-    flex-direction:column;
+    flex-direction: column;
 }
 
-.sec2{
+.sec2 {
     background-color: var(--color3-bg-color);
     color: var(--color4-bg-color);
 }
@@ -137,11 +141,11 @@ section{
     width: 100%;
     height: 100%;
     display: flex;
-    flex-direction:row;
+    flex-direction: row;
     justify-content: space-evenly;
 }
 
-.horizontal-cards > .card{
+.horizontal-cards>.card {
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -153,21 +157,22 @@ section{
     transition: .6s ease-in-out;
 }
 
-.horizontal-cards > .card > h1{
+.horizontal-cards>.card>h1 {
     text-transform: uppercase;
     transition: .6s ease-in-out;
     font-size: 1.7em;
     letter-spacing: 0.4rem;
 }
-.horizontal-cards > .card > h2{
+
+.horizontal-cards>.card>h2 {
     position: absolute;
     font-size: 1.2em;
     transition: .1s ease-in-out;
     opacity: 0;
     bottom: 32vh;
- }
+}
 
-.card.first{
+.card.first {
     text-align: start;
     align-items: flex-start;
     width: 33.33%;
@@ -176,38 +181,42 @@ section{
     background-repeat: no-repeat;
     color: var(--color3-bg-color);
 }
-.card.second{
+
+.card.second {
     text-align: center;
     align-items: center;
     width: 33.33%;
     background-image: url(img/FundoCard2.png);
     background-position: center;
-    background-size: 1000px 100%;
+    background-size: 1000px 110%;
     background-repeat: no-repeat;
     color: var(--color3-bg-color);
 }
-.card.third{
+
+.card.third {
     text-align: end;
-    align-items:end;
+    align-items: end;
     width: 33.33%;
     background-image: url(img/FundoCard3.png);
-    background-position:right;
+    background-position: right;
     background-size: 1000px 100%;
     background-repeat: no-repeat;
     color: var(--color3-bg-color);
 }
 
-.card:hover{
+.card:hover {
     width: 80%;
 }
 
-.card:hover h2{
+.card:hover h2 {
     opacity: 1;
-    transition: 1.5s;
-    transition-timing-function: cubic-bezier(1,0,.63,.85);
+    transition: 1s;
+    transition-timing-function: cubic-bezier(1, 0, .63, .85);
 }
-.card:hover h1{
+
+.card:hover h1 {
     letter-spacing: 1rem;
     transition: 1.5s;
 }
+
 /*sections 2*/
