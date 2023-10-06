@@ -68,12 +68,14 @@ h4 {
 
 /* Header */
 header {
-    position: relative;
+    position: fixed;
     width: 100%;
-    padding: 18px;
+    padding: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: var(--color3-bg-color);
+    z-index: 99;
 }
 
 header>nav {
@@ -126,6 +128,7 @@ nav .button-a a:hover {
 /* Banner */
 
 #banner {
+    margin-top: 5%;
     width: 100%;
     position: relative;
     display: flex;
@@ -141,7 +144,7 @@ nav .button-a a:hover {
     justify-content: center;
     align-items: center;
     max-width: 700px;
-    margin: 40px 30px;
+    margin: 30px 30px;
 }
 
 .banner-text button {
