@@ -208,6 +208,7 @@ nav .button-a a:hover {
     justify-content: center;
     align-items: center;
     background-color:var(--color5-bg-color);
+    padding: 25px 0;
     /* box-shadow: 0px 0px 20px black; */
 }
 
@@ -267,6 +268,7 @@ nav .button-a a:hover {
 }
 .features:has(.text:hover) .card-features:not(:hover) {
     scale: 1 .9;
+    opacity: .7;
     
 }
 .features:has(.text:hover) .card-features:hover {
@@ -318,5 +320,9 @@ form .form-button{
     }
     .features:has(.text:hover) .card-features:not(:hover) {
         scale: 1 1;
+
+    }
+    .features:has(.text:hover) .card-features:hover {
+        border-radius: 0;
     }
 }
