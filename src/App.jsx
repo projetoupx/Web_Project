@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import Site from './site/site.jsx';
-import Login from './app/login.jsx';
+import Login from './app/login/login.jsx';
 
 function App() {
   return (

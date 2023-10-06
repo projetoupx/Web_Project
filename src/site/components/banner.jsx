@@ -15,7 +15,8 @@ export default function Banner() {
                     </div>
                 </div>
                 <div className="banner-img">
-                    <div className='banner-img-fundo'></div>
+                    <div className='banner-img-fundo1'></div>
+                    <div className='banner-img-fundo2'></div>
                     <img src="imgs/banner_img1.png" alt="imagem do prato" />
                 </div>
             </div>
