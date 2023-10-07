@@ -8,9 +8,9 @@ export default function Banner() {
                     <div className='text'>
                         <h1>Sua alimentação nunca mais será largada</h1>
                         <h4>Saude em primeiro lugar</h4>
-                        <div>
-                            <button type='button'>cadastrar</button>
-                            <button type='button'>fazer login</button>
+                        <div className='banner-button'>
+                            <a href="/login" className='button'>Entrar</a>
+                            <a href="/cadastro" className='button'>Cadastrar</a>
                         </div>
                     </div>
                 </div>
