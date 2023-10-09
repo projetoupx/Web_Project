@@ -1,5 +1,6 @@
 import React from 'react';
-import '../form.css';
+import {Link} from 'react-router-dom'
+import '../../form.css';
 
 export default function Login() {
     return (
@@ -24,8 +25,8 @@ export default function Login() {
                             </div>
                             <button className='form-item form-button'>Sing in</button>
                             <div className='form-item form-links'>
-                                <a href="#">Esqueci minha senha</a>
-                                <a href="../cadastro">Crie sua conta</a>
+                                <Link to="../novasenha">Esqueci minha senha</Link>
+                                <Link to="../cadastro">Crie sua conta</Link>
                             </div>
                             <p>&copy; Desenvolvido por Nutriview</p>
                         </form>

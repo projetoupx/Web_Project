@@ -1,5 +1,6 @@
 import React from 'react';
-import '../form.css';
+import {Link} from 'react-router-dom'
+import '../../form.css';
 
 export default function Cadastro() {
     return (
@@ -9,8 +10,10 @@ export default function Cadastro() {
                     <div className='form-container'>
                         <form>
                             <div className='form-header'>
-                                <h1>Nutriview</h1>
-                                <h3>Cadastro</h3>
+                                <div className='form-header-text'>
+                                    <h1>Nutriview</h1>
+                                    <h3>Cadastro</h3>
+                                </div>
                             </div>
                             <div className='form-item form-div'>
                                 <input type="text" className='form-input form-text' id='form-text' placeholder='Seu nome'/>
@@ -30,7 +33,7 @@ export default function Cadastro() {
                             </div>
                             <button className='form-item form-button'>Cadastrar</button>
                             <div className='form-item form-links'>
-                                <a href="../login">Já tenho uma conta</a>
+                                <Link to="../login">Já tenho uma conta</Link>
                             </div>
                             <p>&copy; Desenvolvido por Nutriview</p>
                         </form>

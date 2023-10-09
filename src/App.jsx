@@ -1,19 +1,23 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import Site from './site/site.jsx';
-import Login from './app/login/login.jsx';
-import Cadastro from './app/cadastro/cadastro.jsx';
+import Login from './app/pages/login/login.jsx';
+import Cadastro from './app/pages/cadastro/cadastro.jsx';
+import NovaSenha from './app/pages/resetSenha/novaSenha.jsx';
+import Home from './app/pages/home/home.jsx';
 
 function App() {
   return (
-    <Router>
+    <BrowserRouter>
       <Routes>
         <Route exact path='/' element={<Site />} />
         <Route exact path='/login' element={<Login />} />
         <Route exact path='/cadastro' element={<Cadastro />} />
+        <Route exact path='/novasenha' element={<NovaSenha />} />
+        <Route exact path='/home' element={<Home />} />
       </Routes>
-    </Router>
+    </BrowserRouter>
   );
 }
 

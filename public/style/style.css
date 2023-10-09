@@ -103,22 +103,19 @@ header>nav {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 20rem;
-    gap: 10%;
+    flex-wrap: wrap;
+    gap: 0 1.5em;
 }
 
 header a {
     font-size: 1em;
-    flex-grow: 1;
-    flex-basis: auto;
     text-align: center;
     text-decoration: none;
     transition: .4s ease-out;
-    flex-basis: auto;
     border-style: solid;
     border-color: #ffffff00;
     border-width: 1px;
-    padding: 5px;
+    padding: 5px 10px;
 }
 
 nav .button-a a:hover {
