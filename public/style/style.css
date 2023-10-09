@@ -282,6 +282,64 @@ nav .button-a a:hover {
     border-radius: 20px;
 }
 
+/* infos */
+.infos{
+    padding: 70px 20px;
+    display: flex;
+    flex-direction: column;
+}
+.infos-cards{
+    display: flex;
+    flex-direction: row;
+    background-color: #5A755D;
+    align-items: center;
+    justify-content:space-around;
+    height: 15rem;
+    border-radius: 25px;
+    margin: 30px;
+    padding: 20px;
+}
+.infos-cards p{
+    width: 60%;
+}
+
+/* about */
+.about{
+    padding: 70px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color5-bg-color);
+}
+.about h2{
+    text-transform: uppercase;
+    margin: 30px;
+    font-size: 2em;
+}
+
+.about-conteudo{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+.about-card{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 20rem;
+    width: 25rem;
+    border-radius: 25px;
+    background-color: var(--color3-bg-color);
+}
+.about-cards p{
+    width: 20rem;
+}
+
 @media screen and (max-width: 768px) {
     .card-features {
         height: 40vh;

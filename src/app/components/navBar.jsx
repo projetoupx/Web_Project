@@ -5,11 +5,11 @@ export default function NavBar() {
     return (
         <header>
             <nav>
-                <Link to="./home" id="logo">NutriView</Link>
+                <Link to="../home" id="logo">NutriView</Link>
                 <div className= "button-a">
                     <Link to="#">Inicio</Link>
                     <Link to="#">Suas trocas</Link>
-                    <Link to="../site">Sair</Link>
+                    <Link to="../">Sair</Link>
                 </div>
             </nav>
         </header>

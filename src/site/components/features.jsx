@@ -3,7 +3,7 @@ import React from 'react';
 export default function Features() {
     return (
         <section className="container">
-            <div className="features">
+            <div className="features" id="features">
                 <div className="card-features">
                     <div className='text'>
                         <h3>saude</h3>
