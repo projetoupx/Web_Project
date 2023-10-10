@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;400&display=swap');
 
 :root {
-    --color1-bg-color: #111612;
-    --color2-bg-color: #1B241C;
-    --color3-bg-color: #f6f6f6;
-    --color4-bg-color: #143617;
-    --color5-bg-color: #5A755D;
+    --color1-bg-color: #000000;
+    --color2-bg-color: #000000;
+    --color3-bg-color: #d8d3ab;
+    --color4-bg-color: #ac0a0a;
+    --color5-bg-color: #ece5ce;
 }
 
 /* geral */
@@ -113,13 +113,13 @@ header a {
     text-decoration: none;
     transition: .4s ease-out;
     border-style: solid;
-    border-color: #ffffff00;
+    border-color: #00000000;
     border-width: 1px;
     padding: 5px 10px;
 }
 
 nav .button-a a:hover {
-    border-color: var(--color4-bg-color);
+    border-color: var(--color1-bg-color);
     border-radius: 20px;
     margin: 0;
 }
@@ -160,14 +160,15 @@ nav .button-a a:hover {
     width: 6.5rem;
     padding: .6rem;
     border-style: solid;
-    border-color: var(--color4-bg-color);
+    border-color: var(--color1-bg-color);
     border-radius: 20px;
     border-width: 1px;
     transition: .4s ease-in-out;
 }
 
 .banner-text .button:hover {
-    background-color: var(--color4-bg-color);
+    border-color: var(--color2-bg-color);
+    background-color: var(--color2-bg-color);
     color: var(--color3-bg-color);
 }
 
@@ -184,7 +185,7 @@ nav .button-a a:hover {
 
 .banner-img-fundo1 {
     position: absolute;
-    background-color: #1B241C;
+    background-color: var(--color2-bg-color);
     border-radius: 100px 100px 0 0;
     width: 80%;
     height: 100%;
@@ -194,7 +195,7 @@ nav .button-a a:hover {
 
 .banner-img-fundo2 {
     position: absolute;
-    background-color: #5A755D;
+    background-color: var(--color5-bg-color);
     border-radius: 100px 100px 0 0;
     width: 80%;
     height: 90%;
@@ -291,7 +292,7 @@ nav .button-a a:hover {
 .infos-cards{
     display: flex;
     flex-direction: row;
-    background-color: #5A755D;
+    background-color: var(--color5-bg-color);
     align-items: center;
     justify-content:space-around;
     height: 15rem;
