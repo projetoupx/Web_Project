@@ -1,6 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom'
 import '../../form.css';
+import { ArrowLeft } from '@phosphor-icons/react';
 
 export default function Cadastro() {
     return (
@@ -10,6 +11,7 @@ export default function Cadastro() {
                     <div className='form-container'>
                         <form>
                             <div className='form-header'>
+                            <ArrowLeft/>
                                 <div className='form-header-text'>
                                     <h1>Nutriview</h1>
                                     <h3>Cadastro</h3>
