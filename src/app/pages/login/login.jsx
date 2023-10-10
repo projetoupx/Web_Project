@@ -54,7 +54,7 @@ export default function Login() {
                     <div className='form-container'>
                         <form>
                             <div className='form-header'>
-                                <ArrowLeft />
+                                <Link to="../"><ArrowLeft color='#000000'/></Link>
                                 <div className='form-header-text'>
                                     <h1>Nutriview</h1>
                                     <h3>Please sign in</h3>
