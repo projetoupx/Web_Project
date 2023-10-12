@@ -1,5 +1,12 @@
+
+h1 {
+    color: black;
+    font-size: 2.8em;
+}
+
+
 .form-container{
-    background-color: var(--color5-bg-color);
+    background-color: var(--color3-bg-color);
     width: 100%;
     height: 100vh;
     position: relative;
@@ -15,7 +22,7 @@ form {
     justify-content: space-around;
     padding: 25px;
     border-radius: 20px;
-    box-shadow: 10px 5px 20px black;
+    border: solid black 1px;
     background-color: var(--color3-bg-color);
     width: 25rem;
 }
@@ -37,15 +44,17 @@ form .form-item{
 
 form .form-div{
     display: flex;
+    position: relative;
     flex-direction: column-reverse;
 }
 
+
 form .form-input{
-   padding: 8px 8px 3px 4px;
+   padding: .6rem .4rem .4rem .4rem;
    background: none;
    font-size: 1em;
    border-style: none;
-   border-bottom-style: solid;
+   border-bottom: solid 2px;
 
 }
 
@@ -53,16 +62,17 @@ form .form-button{
     width: 100%;
     background: none;
     border-radius: 5px;
-    font-size: 17px;
+    font-size: 1.2rem;
     border-style: solid;
     transition: all .5s ease;
     padding: 7px;
     background-color: var(--color3-bg-color);
-    border-color: var(--color5-bg-color);
+    border-color: var(--color4-bg-color);
+    cursor: pointer;
 }
 
 form .form-button:hover{
-    background: var(--color5-bg-color);
+    background: var(--color4-bg-color);
     color: var(--color3-bg-color);
 }
 
@@ -97,7 +107,7 @@ form p{
 
 svg{
     top:50%;
-    left: 2rem;
+    left: 1rem;
     transform: translate(-50% , -50%);
     position: absolute;
     border-radius: 50px;

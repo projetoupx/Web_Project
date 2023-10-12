@@ -30,21 +30,13 @@ export default function Login() {
         // Conectar com email e senha...
 
         signInWithEmailAndPassword(auth, email, senha)
-            .then((result) => {
+            .then(result => {
                 setSucesso(true);
                 alert('sucesso');
             })
-            .catch((error) => {
+            .catch(error => {
                 setSucesso(false);
             });
-    }
-
-    function alterarEmail(event) {
-        setEmail(event.target.value);
-    }
-
-    function alterarSenha(event) {
-        setSenha(event.target.value);
     }
 
     return (
@@ -64,11 +56,11 @@ export default function Login() {
                                 sucesso === false ? <div className='form item form-erro'> Email ou senha invalida!!! </div> : null
                             }
                             <div className='form-item form-div'>
-                                <input onChange={alterarEmail} type="email" className='form-input form-email' id='form-email' placeholder='name@example.com' />
+                                <input onChange={(e) => setEmail(e.target.value)} type="email" className='form-input form-email' id='form-email' placeholder='name@example.com' />
                                 <label htmlFor="form-email">Email address</label>
                             </div>
                             <div className='form-item form-div'>
-                                <input onChange={alterarSenha} type="password" className='form-input form-password' id='form-password' placeholder='Password' />
+                                <input onChange={(e) => setSenha(e.target.value)} type="password" className='form-input form-password' id='form-password' placeholder='Password' />
                                 <label htmlFor="form-password">Password</label>
                             </div>
                             <button onClick={loginUsuario} className='form-item form-button' type="button">Sing in</button>
