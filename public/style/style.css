@@ -80,14 +80,14 @@
         background-color: #a9d51a;
         margin-bottom: 1rem;
         position: relative;
-        border-bottom:solid black 2px;
+        border-bottom: solid black 2px;
     }
 
-    .header-relative{
+    .header-relative {
         position: relative;
     }
 
-    .header-fixed{
+    .header-fixed {
         position: fixed;
         top: 0;
         z-index: 99;
@@ -123,20 +123,41 @@
     }
 
     header a {
+        position: relative;
         font-size: 1em;
         text-align: center;
         text-decoration: none;
         transition: .4s ease-out;
-        border-style: solid;
-        border-color: #00000000;
-        border-width: 1px;
         padding: 5px 10px;
+
     }
 
-    nav .button-a a:hover {
-        border-color: var(--color1-bg-color);
+    header .button-a a {
+        color: #5d5d5d;
+
+    }
+
+    header .button-a a:hover {
+        color: #000000;
+
+    }
+
+
+    header .button-a a::before {
+        position: absolute;
+        content: '';
+        width: 0;
+        bottom: 0;
+        right: 0;
+        height: .2rem;
+        background-color: black;
         border-radius: 20px;
-        margin: 0;
+        transition: all .3s ease-in-out;
+    }
+
+    header .button-a a:hover::before {
+        width: 100%;
+        left: 0;
     }
 
     /* Banner */
@@ -213,7 +234,7 @@
 
     .banner-img-fundo2 {
         position: absolute;
-        background-color: var(--color3-bg-color); 
+        background-color: var(--color3-bg-color);
         border-top: solid 13px;
         border-left: solid 6px;
         border-right: solid 15px;
@@ -238,7 +259,7 @@
         flex-wrap: wrap;
         justify-content: center;
         align-items: center;
-        background-color:var(--color5-bg-color);
+        background-color: var(--color5-bg-color);
         padding: 20px 0;
     }
 
@@ -296,38 +317,42 @@
     .card-features:hover p {
         opacity: 1;
     }
+
     .features:has(.text:hover) .card-features:not(:hover) {
         scale: 1 .9;
         opacity: .7;
-        
+
     }
+
     .features:has(.text:hover) .card-features:hover {
         border-radius: 20px;
     }
 
     /* infos */
-    .infos{
+    .infos {
         padding: 70px 20px;
         display: flex;
         flex-direction: column;
     }
-    .infos-cards{
+
+    .infos-cards {
         display: flex;
         flex-direction: row;
         background-color: var(--color5-bg-color);
         align-items: center;
-        justify-content:space-around;
+        justify-content: space-around;
         height: 15rem;
         border-radius: 25px;
         margin: 30px;
         padding: 20px;
     }
-    .infos-cards p{
+
+    .infos-cards p {
         width: 60%;
     }
 
     /* about */
-    .about{
+    .about {
         padding: 70px 20px;
         display: flex;
         flex-direction: column;
@@ -335,13 +360,14 @@
         align-items: center;
         background-color: var(--color5-bg-color);
     }
-    .about h2{
+
+    .about h2 {
         text-transform: uppercase;
         margin: 30px;
         font-size: 2em;
     }
 
-    .about-conteudo{
+    .about-conteudo {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
@@ -349,7 +375,8 @@
         align-items: center;
         gap: 40px;
     }
-    .about-card{
+
+    .about-card {
         padding: 30px;
         display: flex;
         flex-direction: column;
@@ -360,16 +387,18 @@
         background-color: var(--color3-bg-color);
         gap: 2em;
     }
-    .about-cards p{
+
+    .about-cards p {
         width: 20rem;
     }
 
-    .about-card-text{
+    .about-card-text {
         display: flex;
         flex-direction: column;
         gap: 5px;
     }
-    .about-card-img{
+
+    .about-card-img {
         border-radius: 100%;
         height: 15rem;
         width: 15rem;
@@ -381,10 +410,12 @@
             height: 40vh;
             min-width: 100%;
         }
+
         .features:has(.text:hover) .card-features:not(:hover) {
             scale: 1 1;
 
         }
+
         .features:has(.text:hover) .card-features:hover {
             border-radius: 0;
         }
