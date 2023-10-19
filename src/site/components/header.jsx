@@ -1,20 +1,19 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
+import { Link as Scroll } from 'react-scroll';
+
 export default function Header() {
-
-    const [cabecalhoStyle, setCabecalhoStyle] = useState('header-fixed');
-
-
+ 
     return (
         <header>
-            <div className='header-space' />
-            <nav className={cabecalhoStyle}>
-                <Link to="/" id="logo">NutriView</Link>
+            <div id="topPage" className='header-space' />
+            <nav className='header-fixed'>
+                <Scroll to="topPage" spy={true} smooth={true} offset={0} duration={500} id="logo">NutriView</Scroll>
                 <div className="button-a">
-                    <a href="#features">saude</a>
-                    <a href="#infos">troca</a>
-                    <a href="#about">about us</a>
-                    <Link to="/login" className='button'>entrar</Link>
+                    <Scroll className='header-button' to="features" spy={true} smooth={true} offset={-50} duration={500}>saude</Scroll>
+                    <Scroll className='header-button' to="infos" spy={true} smooth={true} offset={0} duration={500}>troca</Scroll>
+                    <Scroll className='header-button' to="about" spy={true} smooth={true} offset={0} duration={500} >about us</Scroll>
+                    <Link to="/login" className='header-button'>entrar</Link>
                 </div>
             </nav>
         </header>

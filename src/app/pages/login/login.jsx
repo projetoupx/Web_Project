@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link , Navigate} from 'react-router-dom';
 import '../../form.css';
 import { ArrowLeft } from '@phosphor-icons/react';
 
@@ -16,23 +16,12 @@ export default function Login() {
 
         // Conectar com google...
 
-        // const provider = new GoogleAuthProvider();
-        // signInWithPopup(auth, provider)
-        // .then((result) => {
-        //     console.log(result);
-        //     alert('sucesso');
-        // })
-        // .catch((error) => {
-        //     console.log(error);
-        //     alert('erro');
-        // });
 
         // Conectar com email e senha...
 
         signInWithEmailAndPassword(auth, email, senha)
             .then(result => {
                 setSucesso(true);
-                alert('sucesso');
             })
             .catch(error => {
                 setSucesso(false);
@@ -52,9 +41,7 @@ export default function Login() {
                                     <h3>Please sign in</h3>
                                 </div>
                             </div>
-                            {
-                                sucesso === false ? <div className='form item form-erro'> Email ou senha invalida!!! </div> : null
-                            }
+                            {sucesso === false ? <div className='form item form-erro'> Email ou senha invalida!!! </div> : null}
                             <div className='form-item form-div'>
                                 <input onChange={(e) => setEmail(e.target.value)} type="email" className='form-input form-email' id='form-email' placeholder='name@example.com' />
                                 <label htmlFor="form-email">Email address</label>
@@ -64,6 +51,7 @@ export default function Login() {
                                 <label htmlFor="form-password">Password</label>
                             </div>
                             <button onClick={loginUsuario} className='form-item form-button' type="button">Sing in</button>
+                            {sucesso === true ? <Navigate to="/home"/> : null}
                             <div className='form-item form-links'>
                                 <Link to="../novasenha">Esqueci minha senha</Link>
                                 <Link to="../cadastro">Crie sua conta</Link>

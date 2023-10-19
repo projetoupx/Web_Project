@@ -82,6 +82,10 @@
         position: relative;
         border-bottom: solid black 2px;
     }
+    .header-space{
+        position: absolute;
+        top: 0;
+    }
 
     .header-relative {
         position: relative;
@@ -112,6 +116,7 @@
         font-weight: 600;
         text-align: center;
         margin: 0 40px;
+        cursor: pointer;
     }
 
     .button-a {
@@ -122,28 +127,26 @@
         gap: 0 1.5em;
     }
 
-    header a {
+    header .header-button {
         position: relative;
         font-size: 1em;
         text-align: center;
         text-decoration: none;
         transition: .4s ease-out;
         padding: 5px 10px;
-
+        cursor: pointer;
     }
 
-    header .button-a a {
+    header .button-a .header-button {
         color: #5d5d5d;
-
     }
 
-    header .button-a a:hover {
+    header .button-a .header-button:hover {
         color: #000000;
-
     }
 
 
-    header .button-a a::before {
+    header .button-a .header-button::before {
         position: absolute;
         content: '';
         width: 0;
@@ -155,11 +158,21 @@
         transition: all .3s ease-in-out;
     }
 
-    header .button-a a:hover::before {
+    header .button-a .header-button:hover::before {
         width: 100%;
         left: 0;
     }
 
+    header .button-a .active::before {
+        width: 100%;
+        left: 0;
+    }
+
+    /* header .button-a a:nth-child(2)::before{
+        width: 100%;
+        left: 0;
+    } */
+    
     /* Banner */
 
     #banner {

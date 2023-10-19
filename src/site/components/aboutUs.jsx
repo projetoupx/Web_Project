@@ -11,7 +11,7 @@ export default function AboutUs() {
                 <h2>nossa equipe:</h2>
                 <div className='about-conteudo'>
                     <div className='about-card'>
-                        <img src="../../imgs/fotosGrupo/fotoNathan.jpg" alt="#" className='about-card-img'/>
+                        <img src="../../imgs/fotosGrupo/fotoNathan.jpg" alt="Foto Nathan" className='about-card-img'/>
                         <div className="about-card-text">
                             <h3>Nathan Tanzi</h3>
                             <p>Veritas semper una est. Fallacia alia aliam trudit. Maior dolor obscurat minorem.</p>
@@ -39,7 +39,7 @@ export default function AboutUs() {
                         </div>
                     </div>
                     <div className='about-card'>
-                        <img src="#" alt="#" className='about-card-img'/>
+                        <img src="../../imgs/fotosGrupo/fotoCaio.jpg" alt="Foto Caio" className='about-card-img'/>
                         <div className="about-card-text">
                             <h3>Caio</h3>
                             <p>Veritas semper una est. Fallacia alia aliam trudit. Maior dolor obscurat minorem.</p>

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom'
+import { Link, Navigate} from 'react-router-dom'
 import '../../form.css';
 import { ArrowLeft } from '@phosphor-icons/react';
 
@@ -12,6 +12,7 @@ export default function Cadastro() {
     const [senha, setSenha] = useState('');
     const [secSenha, setSecSenha] = useState('');
     const [mensage, setMensage] = useState('');
+    const [sucesso, setSucesso] = useState('');
 
     function cadastraUsuario() {
 
@@ -25,7 +26,7 @@ export default function Cadastro() {
         }
         createUserWithEmailAndPassword(auth, email, senha)
             .then(result => {
-                setMensage('Cadastrado!!');
+                setSucesso(true);
             })
             .catch(error => {
                 if(error.code === 'auth/weak-password')
@@ -55,6 +56,7 @@ export default function Cadastro() {
                                 </div>
                             </div>
                             {mensage.length > 0 ? <div className="form-item form-erro"> { mensage } </div> : null}
+                            {sucesso === true ? <Navigate to="/home"/> : null}
                             <div className='form-item form-div'>
                                 <input onChange={(e) => setEmail(e.target.value)} type="email" className='form-input form-email' id='form-email' placeholder='name@example.com' />
                                 <label htmlFor="form-email">Email</label>
