@@ -7,7 +7,7 @@ export default function NavBar() {
             <nav>
                 <Link className='header-button' to="../home" id="logo">NutriView</Link>
                 <div className= "button-a">
-                    <Link className='header-button' to="#">inicio</Link>
+                    <Link className='header-button' to="#">sua dieta</Link>
                     <Link className='header-button' to="#">suas trocas</Link>
                     <Link className='header-button' to="../">sair</Link>
                 </div>

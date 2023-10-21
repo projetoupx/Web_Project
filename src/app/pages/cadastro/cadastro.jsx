@@ -5,6 +5,8 @@ import { ArrowLeft } from '@phosphor-icons/react';
 
 import { createUserWithEmailAndPassword} from 'firebase/auth';
 import { auth } from '../../config/firebase'
+import { doc, setDoc } from "firebase/firestore";
+import { db } from '../../config/firebase';
 
 export default function Cadastro() {
 
@@ -25,8 +27,16 @@ export default function Cadastro() {
             return;
         }
         createUserWithEmailAndPassword(auth, email, senha)
-            .then(result => {
-                setSucesso(true);
+            .then(data => {
+                const uid = data.user.uid;             
+                const docData = {
+                    email: email,
+                    dieta: {
+                        segunda: "adicionar dieta!!",
+                    }
+                };
+                setDoc(doc(db, "users", uid), docData);
+                setSucesso(true);      
             })
             .catch(error => {
                 if(error.code === 'auth/weak-password')
@@ -66,7 +76,7 @@ export default function Cadastro() {
                                 <label htmlFor="form-password">Senha</label>
                             </div>
                             <div className='form-item form-div'>
-                                <input onChange={(e) => setSecSenha(e.target.value)} type="password" className='form-input form-password' id='form-password' placeholder='Password' />
+                                <input onChange={(e) => setSecSenha(e.target.value)} type="password" className='form-input form-password' id='form-secPassword' placeholder='Password' />
                                 <label htmlFor="form-password">Repita senha</label>
                             </div>
                             <button onClick={cadastraUsuario} className='form-item form-button' type='button' >Cadastrar</button>
