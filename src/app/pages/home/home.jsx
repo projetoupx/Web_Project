@@ -2,7 +2,7 @@ import React from 'react';
 //import {Link} from 'react-router-dom';
 import './home.css';
 import NavBar from '../../components/navBar';
-import ListaAlimentos from '../../components/ListaDietaHome/listaAlimentos';
+import ListaAlimentos from '../../components/ListaDietaHome/ListaAlimentos';
 
 export default function Home() {
     return (

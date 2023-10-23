@@ -24,7 +24,7 @@
 .dieta-semana-content {
     position: relative;
     overflow: hidden;
-    max-height: 6rem;
+    max-height: 3rem;
 
     &::before {
         content: '';
@@ -78,7 +78,8 @@
 }
 
 .dieta-semana.active .dieta-semana-content {
-    height: auto;
+    overflow: auto;
+    max-height: none;
 }
 
 .dieta-semana.active .dieta-semana-content::before {
