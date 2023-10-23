@@ -24,7 +24,7 @@ form {
     border-radius: 20px;
     border: solid black 1px;
     background-color: var(--color3-bg-color);
-    width: 25rem;
+    width: 22em;
 }
 form .form-header{
     position: relative;
@@ -35,6 +35,13 @@ form .form-header{
 form .form-header-text{
     text-align: center;
     width: 100%;
+}
+
+form .form-sep{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap:10px
 }
 
 form .form-item{
@@ -117,4 +124,11 @@ form-header svg{
     &:hover{
         background-color: rgb(172, 172, 172);
     }
+}
+
+.no-active{
+    display: none;
+}
+.active{
+    display: contents;
 }

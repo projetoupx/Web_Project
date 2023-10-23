@@ -4,7 +4,7 @@ import Semana from './semana';
 import { doc, getDoc, collection} from "firebase/firestore";
 import { db } from '../../config/firebase';
 
-const usuario = "Z0jgtfxzXxah4GcCYsE9aCJmpF22";
+var usuario = "7A4TUyqE64RnedelwS1Za0TfHo92";
 
 const usersRef = collection(db, "users");
 const docRef =  doc(usersRef, usuario);
@@ -14,12 +14,7 @@ const cards = Object.values(docSnap.data().dieta);
 export default function ListaAlimentos() {
     const [dietas, setDietas] = useState([]);
 
-
-    
     useEffect(function () {
-        
-
-        console.log("aqui", cards.sort());
 
         setDietas(cards.sort(function(a,b){
             if(a.id>b.id) return 1;

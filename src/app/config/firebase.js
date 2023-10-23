@@ -3,14 +3,13 @@ import { getAuth} from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-    apiKey: "AIzaSyCB9ukpNo35cFBuTEquIiQDBPg0s5wMUvQ",
-    authDomain: "testehtmldatabase.firebaseapp.com",
-    databaseURL: "https://testehtmldatabase-default-rtdb.firebaseio.com",
-    projectId: "testehtmldatabase",
-    storageBucket: "testehtmldatabase.appspot.com",
-    messagingSenderId: "955577438350",
-    appId: "1:955577438350:web:b22b15d95587ccda8539df",
-    measurementId: "G-QWJ6FGXR1F"
+  apiKey: "AIzaSyCrsfMX9kr1qDMlw0eWSMvSj8bzAzd2Xek",
+  authDomain: "nutriview-48d8b.firebaseapp.com",
+  projectId: "nutriview-48d8b",
+  storageBucket: "nutriview-48d8b.appspot.com",
+  messagingSenderId: "361189393668",
+  appId: "1:361189393668:web:facf325228ac12795dbc51",
+  measurementId: "G-H0P5WHGWG7"
   };
 
   const app = initializeApp(firebaseConfig);

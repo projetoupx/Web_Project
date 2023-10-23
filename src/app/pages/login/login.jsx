@@ -1,7 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Link , Navigate} from 'react-router-dom';
 import '../../form.css';
 import { ArrowLeft } from '@phosphor-icons/react';
+
+import { AuthContext } from '../../context/auth';
 
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../../config/firebase'
@@ -13,17 +15,15 @@ export default function Login() {
     const [sucesso, setSucesso] = useState('');
 
     function loginUsuario() {
-
-        // Conectar com google...
-
-
-        // Conectar com email e senha...
+        const {setLogado} = React.useContext(AuthContext);
 
         signInWithEmailAndPassword(auth, email, senha)
             .then(result => {
+                setLogado(true);
                 setSucesso(true);
             })
             .catch(error => {
+                setLogado(false);
                 setSucesso(false);
             });
     }
