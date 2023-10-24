@@ -82,7 +82,8 @@
         position: relative;
         border-bottom: solid black 2px;
     }
-    .header-space{
+
+    .header-space {
         position: absolute;
         top: 0;
     }
@@ -165,12 +166,12 @@
         left: 0;
     }
 
-    header .button-a .active::before {
+    header .button-a .onActive::before {
         width: 100%;
         left: 0;
     }
 
-    
+
     /* Banner */
 
     #banner {
@@ -359,19 +360,20 @@
         margin: 30px;
         padding: 20px;
     }
+
     .infos-cards::before {
         content: '';
         position: absolute;
         top: 0;
         left: 0;
-        transform: scale(1.08,1.08);
+        transform: scale(1.08, 1.08);
         width: calc(100% + 0px);
         height: calc(100% + 10px);
         border: var(--color5-bg-color) 2px solid;
         border-left: var(--color5-bg-color) 8px solid;
-        border-right:var(--color5-bg-color)  12px solid;
-        border-top:var(--color5-bg-color)  2px solid;
-        border-right:var(--color5-bg-color)  5px solid;
+        border-right: var(--color5-bg-color) 12px solid;
+        border-top: var(--color5-bg-color) 2px solid;
+        border-right: var(--color5-bg-color) 5px solid;
         border-radius: 25px;
 
     }
@@ -393,7 +395,7 @@
         gap: 20px;
     }
 
-    .infos-button .button{
+    .infos-button .button {
         text-decoration: none;
         font-size: 1.1rem;
         text-align: center;
@@ -404,8 +406,8 @@
         border-radius: 10px;
         border-width: 1px;
         transition: .4s ease-in-out;
-        
-        &:hover{
+
+        &:hover {
             border-color: var(--color2-bg-color);
             background-color: var(--color2-bg-color);
             color: var(--color3-bg-color);
@@ -475,7 +477,7 @@
         gap: 20px;
     }
 
-    .about-button .button{
+    .about-button .button {
         text-decoration: none;
         font-size: 1.1rem;
         text-align: center;
@@ -489,7 +491,7 @@
         border-width: 1px;
         transition: .4s ease-in-out;
 
-        &:hover{
+        &:hover {
             background-color: var(--color5-bg-color);
         }
     }

@@ -16,9 +16,8 @@ const ProtectedRoute = ({ user, children }) => {
 };
 
 function App() {
-  const { logado, usuario } = useContext(AuthContext);
+  const { logado } = useContext(AuthContext);
   const user = logado;
-  console.log(logado, usuario, user);
   return (
     <BrowserRouter>
         <Routes>

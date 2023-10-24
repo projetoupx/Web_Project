@@ -5,7 +5,7 @@ const AuthContext = React.createContext({});
 function AuthProvider(props){
     let isLogado = localStorage.getItem("logado");
     let isUser = localStorage.getItem("user");
-    const [logado, setLogado] = useState(!isLogado ? true : false);
+    const [logado, setLogado] = useState(isLogado === "true" ? true : false);
     const [usuario, setUsuario] = useState(isUser ? isUser : "");
     return (
         <AuthContext.Provider value={{logado, setLogado, usuario, setUsuario}}>
