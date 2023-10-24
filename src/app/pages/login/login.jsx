@@ -13,12 +13,16 @@ export default function Login() {
     const [email, setEmail] = useState('');
     const [senha, setSenha] = useState('');
     const [sucesso, setSucesso] = useState('');
+    const {setLogado, setUsuario} = useContext(AuthContext);
 
     function loginUsuario() {
-        const {setLogado} = React.useContext(AuthContext);
-
         signInWithEmailAndPassword(auth, email, senha)
-            .then(result => {
+            .then(data => {
+                const uid = data.user.uid;
+
+                localStorage.setItem("logado", true);
+                localStorage.setItem("user", uid);
+                setUsuario(uid);
                 setLogado(true);
                 setSucesso(true);
             })
