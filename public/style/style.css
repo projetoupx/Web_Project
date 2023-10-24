@@ -120,6 +120,7 @@
     }
 
     .button-a {
+        position: relative;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -138,6 +139,7 @@
     }
 
     header .button-a .header-button {
+        position: relative;
         color: #5d5d5d;
     }
 
@@ -168,10 +170,6 @@
         left: 0;
     }
 
-    /* header .button-a a:nth-child(2)::before{
-        width: 100%;
-        left: 0;
-    } */
     
     /* Banner */
 
@@ -349,9 +347,11 @@
     }
 
     .infos-cards {
+        position: relative;
         display: flex;
         flex-direction: row;
-        background-color: var(--color5-bg-color);
+        /* background-color: var(--color5-bg-color); */
+        border: solid var(--color5-bg-color) 2px;
         align-items: center;
         justify-content: space-around;
         height: 15rem;
@@ -359,8 +359,29 @@
         margin: 30px;
         padding: 20px;
     }
+    .infos-cards::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: scale(1.08,1.08);
+        width: calc(100% + 0px);
+        height: calc(100% + 10px);
+        border: var(--color5-bg-color) 2px solid;
+        border-left: var(--color5-bg-color) 8px solid;
+        border-right:var(--color5-bg-color)  12px solid;
+        border-top:var(--color5-bg-color)  2px solid;
+        border-right:var(--color5-bg-color)  5px solid;
+        border-radius: 25px;
+
+    }
+
+    .infos-cards h2 {
+        color: var(--color2-bg-color);
+    }
 
     .infos-cards p {
+        color: var(--color2-bg-color);
         width: 60%;
     }
 
@@ -383,13 +404,14 @@
         border-radius: 10px;
         border-width: 1px;
         transition: .4s ease-in-out;
+        
+        &:hover{
+            border-color: var(--color2-bg-color);
+            background-color: var(--color2-bg-color);
+            color: var(--color3-bg-color);
+        }
     }
 
-    .infos-button .button:hover {
-        border-color: var(--color2-bg-color);
-        background-color: var(--color2-bg-color);
-        color: var(--color3-bg-color);
-    }
 
     /* about */
     .about {
