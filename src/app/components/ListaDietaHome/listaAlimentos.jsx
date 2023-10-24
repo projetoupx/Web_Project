@@ -1,26 +1,27 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext} from 'react';
 import './Lista.css';
 import Semana from './semana';
-import { doc, getDoc, collection} from "firebase/firestore";
+import { doc, onSnapshot} from "firebase/firestore";
 import { db } from '../../config/firebase';
+import { AuthContext } from '../../context/auth';
 
-var usuario = "7A4TUyqE64RnedelwS1Za0TfHo92";
-
-const usersRef = collection(db, "users");
-const docRef =  doc(usersRef, usuario);
-const docSnap = await getDoc(docRef);
-const cards = Object.values(docSnap.data().dieta);
 
 export default function ListaAlimentos() {
     const [dietas, setDietas] = useState([]);
-
+    const { usuario } = useContext(AuthContext);
+    const user = usuario;
     useEffect(function () {
 
-        setDietas(cards.sort(function(a,b){
-            if(a.id>b.id) return 1;
-            if(a.id<b.id) return -1;
-            return 0;
-        }));
+        onSnapshot(doc(db, "users", user), (doc) => {
+            const cards = Object.values(doc.data().dieta);
+            setDietas(cards.sort(function(a,b){
+                if(a.id>b.id) return 1;
+                if(a.id<b.id) return -1;
+                return 0;
+            }));
+        });
+
+    
 
     }, []);
 

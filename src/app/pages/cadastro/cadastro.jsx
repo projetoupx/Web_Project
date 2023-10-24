@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState , useContext} from 'react';
 import { Link, Navigate } from 'react-router-dom'
 import '../../form.css';
 import { ArrowLeft } from '@phosphor-icons/react';
@@ -7,6 +7,9 @@ import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../../config/firebase'
 import { doc, setDoc } from "firebase/firestore";
 import { db } from '../../config/firebase';
+
+import { AuthContext } from '../../context/auth';
+
 
 export default function Cadastro() {
 
@@ -26,6 +29,7 @@ export default function Cadastro() {
     const [isRight, setIsRight]= useState(true);
     const [className1, setClassName1]= useState('form-1 active');
     const [className2, setClassName2]= useState('form-2 no-active');
+    const {setLogado, setUsuario} = useContext(AuthContext);
 
     const toggleProxi = () => { 
         setMensage('');
@@ -71,6 +75,10 @@ export default function Cadastro() {
                 };
                 setDoc(doc(db, "users", uid), docData);
 
+                localStorage.setItem("logado", true);
+                localStorage.setItem("user", uid);
+                setUsuario(uid);
+                setLogado(true);
                 setSucesso(true);
             })
             .catch(error => {
