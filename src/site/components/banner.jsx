@@ -7,8 +7,8 @@ export default function Banner() {
             <div id="banner">
                 <div className="banner-text">
                     <div className='text'>
-                        <h1>Sua alimentação nunca mais será largada</h1>
-                        <h4>Saude em primeiro lugar</h4>
+                        <h1>Dieta não precisa ser ruim.</h1>
+                        <h4>Sua alimentação descomplicada.</h4>
                         <div className='banner-button'>
                             <Link to="/login" className='button'>Entrar</Link>
                             <Link to="/cadastro" className='button'>Cadastrar</Link>

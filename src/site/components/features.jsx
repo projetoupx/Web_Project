@@ -6,22 +6,22 @@ export default function Features() {
             <div className="features" id="features">
                 <div className="card-features">
                     <div className='text'>
-                        <h3>saude</h3>
-                        <p>foco de nosso projeto, é a saude sempre em primeiro lugar</p>
+                        <h3>Disposição</h3>
+                        <p>Disposição para tudo que a vida pode lhe oferecer.</p>
                     </div>
                     <img src="/imgs/FundoCard1.png" alt="" />
                 </div>
                 <div className="card-features">
                     <div className='text'>
-                        <h3>bem estar</h3>
-                        <p>o bem estar de saber que sua alimentação é a melhor</p>
+                    <h3>Saúde</h3>
+                    <p>Saúde é o estado de completo bem-estar físico, mental e social e não somente a ausência de doença.</p>   
                     </div>
                     <img src="/imgs/FundoCard2.png" alt="" />
                 </div>
                 <div className="card-features">
                     <div className='text'>
-                        <h3>disposição</h3>
-                        <p>disposição para tudo que a vida pode lhe oferecer</p>
+                        <h3>Constância </h3>
+                        <p>Constância é o segredo para inserir bons hábitos ao seu cotidiano.</p>
                     </div>
                     <img src="/imgs/FundoCard3.png" alt="" />
                 </div>

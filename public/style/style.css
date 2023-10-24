@@ -2,10 +2,10 @@
 
     :root {
         --color1-bg-color: hsl(0, 0%, 0%);
-        --color2-bg-color: #d31919;
+        --color2-bg-color: #cd853f;
         --color3-bg-color: #e7e7e7;
         --color4-bg-color: #10a100;
-        --color5-bg-color: #a9d51a;
+        --color5-bg-color: #95bf0a;
 
         --header-heigth: 3.5em;
     }
@@ -364,6 +364,33 @@
         width: 60%;
     }
 
+    .infos-button {
+        padding: 10px 0;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .infos-button .button{
+        text-decoration: none;
+        font-size: 1.1rem;
+        text-align: center;
+        width: 350px;
+        padding: .6rem;
+        border-style: solid;
+        border-color: var(--color1-bg-color);
+        border-radius: 10px;
+        border-width: 1px;
+        transition: .4s ease-in-out;
+    }
+
+    .infos-button .button:hover {
+        border-color: var(--color2-bg-color);
+        background-color: var(--color2-bg-color);
+        color: var(--color3-bg-color);
+    }
+
     /* about */
     .about {
         padding: 70px 20px;
@@ -416,6 +443,33 @@
         height: 15rem;
         width: 15rem;
         object-fit: cover;
+    }
+
+    .about-button {
+        padding: 10px 0;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .about-button .button{
+        text-decoration: none;
+        font-size: 1.1rem;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: .6rem;
+        border-style: solid;
+        border-color: var(--color1-bg-color);
+        border-radius: 20px;
+        border-width: 1px;
+        transition: .4s ease-in-out;
+
+        &:hover{
+            background-color: var(--color5-bg-color);
+        }
     }
 
     @media screen and (max-width: 768px) {
