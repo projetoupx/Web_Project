@@ -3,6 +3,7 @@ import React from 'react';
 import './home.css';
 import NavBar from '../../components/navBar';
 import ListaAlimentos from '../../components/ListaDietaHome/ListaAlimentos';
+import FormCalculo from '../../components/Calculo/FormCalculo';
 
 export default function Home() {
     return (
@@ -10,7 +11,7 @@ export default function Home() {
             <main>
                 <NavBar />
                 <section className='home-container'>
-                    <h1>bom dia</h1>
+                    <FormCalculo/>
                     <ListaAlimentos/>
                 </section>
             </main>

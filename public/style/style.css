@@ -77,7 +77,6 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: #a9d51a;
         margin-bottom: 1rem;
         position: relative;
         border-bottom: solid black 2px;
@@ -105,9 +104,8 @@
         align-items: center;
         flex-wrap: wrap;
         width: 100%;
-        height: inherit;
         font-size: 1.4em;
-        padding-bottom: 0;
+        padding: .5rem 0;
         background-color: var(--color3-bg-color);
     }
 
@@ -414,6 +412,20 @@
         }
     }
 
+    [data-anime] {
+        opacity: 0;
+        transition: .3s;
+    }
+    [data-anime="left"] {
+        transform: translate3d(-50px,0,0);
+    }
+    [data-anime="right"] {
+        transform: translate3d(-50px,0,0);
+    }
+    [data-anime].animate{
+        opacity: 1;
+        transform: translate3d(0,0,0);
+    }
 
     /* about */
     .about {
