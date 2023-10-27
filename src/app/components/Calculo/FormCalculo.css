@@ -1,6 +1,58 @@
 
-.main{
-    background-color: aquamarine;
-    width: 100%;
-    padding: 10px;
+.formCalculo{
+    max-width: 50em;
+    padding: 20px;
+    border: 1px solid black;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
+.formCalculo .form-conteudos{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap:20px 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+.formCalculo .form-item{
+    flex:auto;
+    width: fit-content;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+    gap: 3px;
+    
+}
+
+.formCalculo .form-item .form-input{
+    min-width: 19rem;
+    background: none;
+    border: none;
+    border-bottom: 1px black solid;
+    font-size: 1em;
+}
+
+.formCalculo .form-item .form-input[type="number"]{
+    min-width: 0rem;
+    width: 100px;
+}
+
+.formCalculo .form-item button{
+    width:fit-content;
+    min-width:fit-content;
+    padding: 5px 10px;
+    background: none;
+    border: none;
+    border: 1px black solid;
+    font-size: 1em;
+    transition: all .3s ease-in-out;
+    cursor:pointer;
+    &:hover{
+        background-color: var(--color5-bg-color);
+    }
+}
+

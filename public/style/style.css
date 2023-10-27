@@ -97,7 +97,7 @@
         z-index: 99;
     }
 
-    header>nav {
+    header > nav {
         display: flex;
         flex-direction: row;
         justify-content: space-around;

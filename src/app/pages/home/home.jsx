@@ -11,7 +11,10 @@ export default function Home() {
             <main>
                 <NavBar />
                 <section className='home-container'>
-                    <FormCalculo/>
+                    <div className='home-conteudo'>
+                        <h1>Hello</h1>
+                        <FormCalculo/>
+                    </div>
                     <ListaAlimentos/>
                 </section>
             </main>

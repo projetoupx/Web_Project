@@ -23,7 +23,7 @@ export default function Cadastro() {
     const {setLogado, setUsuario} = useContext(AuthContext);
 
     function cadastraUsuario() {
-        if(secSenha != senha){
+        if(secSenha !== senha){
             setMensage('Senhas diferentes');
             return 0;
         }else if(!senha || !secSenha || !email){
@@ -69,7 +69,7 @@ export default function Cadastro() {
             <main>
                 <section className="container">
                     <div className='form-container'>
-                        <form>
+                        <form className='form'>
                             <div className='form-header'>
                                 <Link to="../"><ArrowLeft color='#000000' /></Link>
                                 <div className='form-header-text'>

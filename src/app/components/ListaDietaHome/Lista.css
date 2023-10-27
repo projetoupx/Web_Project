@@ -1,5 +1,5 @@
 .dieta {
-    width: 39em;
+    width: 23em;
     padding: 10px;
     position: relative;
     display: flex;
@@ -7,6 +7,7 @@
     align-items: flex-start;
     justify-content: space-around;
     gap: 5px;
+    flex: auto;
 
 }
 

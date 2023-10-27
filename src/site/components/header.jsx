@@ -4,8 +4,7 @@ import { Link as Scroll } from 'react-scroll';
 
 export default function Header() {
 
-    const [styleHeader, setStyleHeader] = useState('header-fixed')
-
+    const [styleHeader, setStyleHeader] = useState('header-fixed');
     
     return (
         <header>

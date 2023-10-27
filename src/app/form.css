@@ -15,7 +15,7 @@ h1 {
     justify-content: center;
 }
 
-form {
+.form {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -26,37 +26,37 @@ form {
     background-color: var(--color3-bg-color);
     width: 22em;
 }
-form .form-header{
+.form .form-header{
     position: relative;
     display: flex;
     flex-direction: row;
 }
 
-form .form-header-text{
+.form .form-header-text{
     text-align: center;
     width: 100%;
 }
 
-form .form-sep{
+.form .form-sep{
     width: 100%;
     display: flex;
     flex-direction: row;
     gap:10px
 }
 
-form .form-item{
+.form .form-item{
     width: 100%;
     margin: 8px 0;
 }
 
-form .form-div{
+.form .form-div{
     display: flex;
     position: relative;
     flex-direction: column-reverse;
 }
 
 
-form .form-input{
+.form .form-input{
    padding: .6rem .4rem .4rem .4rem;
    background: none;
    font-size: 1em;
@@ -65,7 +65,7 @@ form .form-input{
 
 }
 
-form .form-button{
+.form .form-button{
     width: 100%;
     background: none;
     border-radius: 5px;
@@ -78,7 +78,7 @@ form .form-button{
     cursor: pointer;
 }
 
-form .form-button:hover{
+.form .form-button:hover{
     background: var(--color4-bg-color);
     color: var(--color3-bg-color);
 }
@@ -99,7 +99,7 @@ form .form-button:hover{
 .form-links a:hover{
     text-decoration:underline;
 }
-form p{
+.form p{
     text-align: center;
     margin-top: 4px;
     font-size: .8em;
@@ -112,7 +112,7 @@ form p{
     text-align: center;
 }
 
-form-header svg{
+.form-header svg{
     top:50%;
     left: 1rem;
     transform: translate(-50% , -50%);

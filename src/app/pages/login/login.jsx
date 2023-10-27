@@ -36,7 +36,7 @@ export default function Login() {
             <main>
                 <section className="container">
                     <div className='form-container'>
-                        <form>
+                        <form className='form'>
                             <div className='form-header'>
                                 <Link to="../"><ArrowLeft color='#000000'/></Link>
                                 <div className='form-header-text'>
