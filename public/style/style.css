@@ -261,6 +261,22 @@
         width: 80%;
     }
 
+    [typing-animation]{
+        white-space: nowrap;
+        overflow: hidden;
+        animation: typing 1.5s steps(29)  normal;
+    }
+
+    @keyframes typing{
+        from{
+            width: 0;
+        }
+        to{
+            width: 100%;
+        }
+    }
+
+
     /* features */
     .features {
         display: flex;
@@ -414,7 +430,8 @@
 
     [data-anime] {
         opacity: 0;
-        transition: .3s;
+        transition: .5s;
+        transition-delay: .1s;
     }
     [data-anime="left"] {
         transform: translate3d(-50px,0,0);

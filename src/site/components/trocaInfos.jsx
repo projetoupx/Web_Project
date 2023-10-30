@@ -1,24 +1,40 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {Link} from 'react-router-dom';
 
 export default function TrocaInfos() {
-    
-    const animationClass = 'animate';
 
-    function animeScroll(){
-        const target = document.querySelectorAll('[data-anime]');
-        const windowTop = window.scrollY + ((window.innerHeight * 3)/4);
-        target.forEach((element) => {
-            if((windowTop) > element.offsetTop){
-                element.classList.add(animationClass);
-            }else{
-                element.classList.remove(animationClass);
-            }
+    useEffect(()=>{
+        
+        const animationClass = 'animate';
+        const myObserver = new IntersectionObserver( (entries) =>{
+            console.log(element);
+            entries.forEach( (entry) =>{
+            if(entry.isIntersecting)
+                entry.target.classList.add(animationClass);
+
+            }) 
         })
-    }
-    window.addEventListener('scroll', () => {
-        animeScroll();
+
+        const element = document.querySelectorAll('[data-anime]');
+        element.forEach((element) => myObserver.observe(element))
+        
     })
+   
+
+    // function animeScroll(){
+        
+    //     const windowTop = window.scrollY + ((window.innerHeight * 3)/4);
+    //     target.forEach((element) => {
+    //         if((windowTop) > element.offsetTop){
+    //             element.classList.add(animationClass);
+    //         }else{
+    //             element.classList.remove(animationClass);
+    //         }
+    //     })
+    // }
+    // window.addEventListener('scroll', () => {
+    //     animeScroll();
+    // })
 
     return (
         <section className="container">

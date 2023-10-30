@@ -7,7 +7,7 @@ export default function Banner() {
             <div id="banner">
                 <div className="banner-text">
                     <div className='text'>
-                        <h1>Dieta não precisa ser ruim.</h1>
+                        <h1 typing-animation="2.8" >Dieta não precisa ser ruim.</h1>
                         <h4>Sua alimentação descomplicada.</h4>
                         <div className='banner-button'>
                             <Link to="/login" className='button'>Entrar</Link>
