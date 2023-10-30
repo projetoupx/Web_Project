@@ -7,11 +7,12 @@
     justify-content: space-between;
     flex-wrap: wrap;
     padding: 0 30px;
+    gap: 10px;
 }
 .home-conteudo{
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: start;
     flex-direction: column;
     flex: 12;
     width: fit-content;

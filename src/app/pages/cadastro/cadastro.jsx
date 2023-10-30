@@ -39,7 +39,8 @@ export default function Cadastro() {
                         card1: {
                             id: 1,
                             dia: "segunda",
-                            comidas: ["adicione uma dieta!"]
+                            comidas: ["adicione uma dieta!"],
+                            nome:''
                         }
                     }
                 };

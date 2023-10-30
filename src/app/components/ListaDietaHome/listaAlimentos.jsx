@@ -11,7 +11,6 @@ export default function ListaAlimentos() {
     const { usuario } = useContext(AuthContext);
     const user = usuario;
     useEffect(function () {
-
         onSnapshot(doc(db, "users", user), (doc) => {
             const cards = Object.values(doc.data().dieta);
             setDietas(cards.sort(function(a,b){
@@ -20,9 +19,6 @@ export default function ListaAlimentos() {
                 return 0;
             }));
         });
-
-    
-
     }, []);
 
     return (
