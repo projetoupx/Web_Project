@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect} from 'react';
 import { BrowserRouter, Routes, Route, Navigate} from 'react-router-dom';
 
 import Site from './site/site.jsx';
@@ -18,6 +18,22 @@ const ProtectedRoute = ({ user, children }) => {
 function App() {
   const { logado } = useContext(AuthContext);
   const user = logado;
+  
+  useEffect(()=>{
+
+    const myObserver = new IntersectionObserver( (entries) =>{
+        entries.forEach( (entry) =>{
+            entry.target.classList.toggle('animate', entry.isIntersecting)
+        }) 
+    },
+    {
+        threshold:.5,
+    })
+
+    const elements = document.querySelectorAll('[data-anime]')
+    elements.forEach((element) => myObserver.observe(element))
+    
+})
   return (
     <BrowserRouter>
         <Routes>

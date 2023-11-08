@@ -26,7 +26,7 @@ export default function ListaAlimentos() {
             <h2>Suas dietas:</h2>
             {
                 dietas.map(dieta => {
-                    return  <Semana key={dieta.id} dia={dieta.dia} text={dieta.comidas} />
+                    return  <Semana data-anime key={dieta.id} dia={dieta.dia} text={dieta.horarios} />
                 })
             }
             

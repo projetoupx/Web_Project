@@ -36,10 +36,10 @@ export default function Cadastro() {
                 const uid = data.user.uid;
                 const docData = {
                     dieta: {
-                        card1: {
+                        segunda: {
                             id: 1,
                             dia: "segunda",
-                            comidas: ["adicione uma dieta!"],
+                            horarios: ["adicione uma dieta!"],
                             nome:''
                         }
                     }

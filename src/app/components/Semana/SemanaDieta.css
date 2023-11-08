@@ -1,0 +1,45 @@
+.cards{
+    display: flex;
+    flex-direction: row;
+    gap:15px;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    flex-wrap: wrap;
+}
+.semana-card{
+    background-color: var(--color3-bg-color);
+    border: 1px solid black;
+    border-radius: 18px;
+    padding: 10px;
+    flex: 1;
+    min-width: 15em;
+    max-width: 20em;
+}
+.semana-card form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.semana-card form .form-horarios{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+.semana-card form .horario{
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+    border-bottom: 1px solid black;
+}
+
+.pcard-inputs{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+.card-content{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
