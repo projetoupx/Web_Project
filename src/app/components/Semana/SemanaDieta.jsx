@@ -11,14 +11,16 @@ export default function SemanaDieta(props) {
     const { usuario } = useContext(AuthContext);
     const user = usuario;
 
+
+
     useEffect(function () {
         onSnapshot(doc(db, "users", user), (doc) => {
             const cards = Object.values(doc.data().dieta);
             cards.map((dia) => {
                 if (props.dia === dia.dia) {
                     setDiet(dia);
-                    lista = [...dia, lista];
-                    // console.log(lista)
+                    lista = [dia.horarios, ...lista];
+                    setHorar(lista)
                 }
 
             })
@@ -27,96 +29,105 @@ export default function SemanaDieta(props) {
 
     function Dados() {
         let princ = document.querySelectorAll(".princ")
-        
+
         princ.forEach((values, index) => {
             let num = 0;
-            lista.forEach((value) => {
-                if (values.value === value) {
-                    console.log(value)
-                    num = 1;
-                }
-            })
+            const hora_comida = {};
+            
             if (num === 0 && values.value !== '') {
-                lista = [...horar, values.value]
-                // console.log("lista:",lista);
+                hora_comida[values.value] = [{ nome: "", gramas: "" }, { nome: "", gramas: "" }];
+                lista = [...horar, hora_comida];
                 setHorar(lista);
             }
-    
-    
-            // horar.forEach((text, index) => {
-    
-            //     console.log(index, text)
-            //     // const docData = {
-            //     //     dieta:[{
-            //     //         horarios:{
-            //     //             text:[{nome:"maça",gramas:"200g"}]
-            //     //         }
-            //     //     }]
-            //     // };
-            //     // updateDoc(doc(db, "users", user), docData);
-            // })
+
         })
     }
 
+    function DadosComida() {
+
+    }
+
     function SalvarDados() {
-        const docData = {
-            dieta: [{
-                dia: props.dia,
-                horarios: {
-                    almoco: [{ nome: "maça", gramas: "200g" }]
-                }
-            }]
+        // const docData = {
+        //     dieta: [{
+        //         dia: props.dia,
+        //         horarios: {
+        //             almoco: [{ nome: "maça", gramas: "200g" }]
+        //         }
+        //     }]
 
 
-        };
-        updateDoc(doc(db, "users", user), docData);
+        // };
+        // updateDoc(doc(db, "users", user), docData);
+
+        console.log(horar)
     }
 
     return (
         <div className="semana-card">
             <h3>{props.dia}</h3>
+            <label>Horarios:</label>
             <form>
-                <label>Horarios:</label>
                 <div className={`${props.dia} conteudo`}>
                     {
                         horar.length !== 0 ?
                             <div className='card-inputs'>
-                                {
-                                    horar.map((text, index) => {
-                                        return (
-                                            <div key={index} className="card-content card-hora">
-                                                <div className="card-row">
-                                                    <h3>{text}:</h3>
-                                           
+                                <div className="cards">
+                                    {
+                                        horar.map((values, index) => {
+                                            return (
+                                                <div key={index} className="card-content card-hora">
+                                                    {
+                                                        Object.keys(values).map((itenName, index) => {
+                                                            return (
+                                                                <div className="comida" key={index}>
+                                                                    <div className="card-row">
+                                                                        <h3>{itenName}:</h3>
+                                                                    </div>
+                                                                    {
+                                                                    Object.values(values).map((itens, index) => {
+                                                                        return(
+                                                                        itens.map((text, index) => {
+                                                                            return (
+                                                                                <div key={index}>
+                                                                                    <label>- Comida {index +1}:</label>
+                                                                                    <div className="card-row">
+                                                                                        <label>-- nome:</label>
+                                                                                        <input key={index} className={`card-input nome`} type="text" placeholder='exemplo: comidas' />
+                                                                                    </div>
+                                                                                    <div className="card-row">
+                                                                                        <label>-- gramas:</label>
+                                                                                        <input key={index} className={`card-input gramas`} type="text" placeholder='exemplo: comidas' />
+                                                                                    </div>
+                                                                                </div>
+                                                                            );
+                                                                        })
+                                                                        )
+                                                                    })
+                                                                    }
+                                                                </div>
+                                                            );
+                                                        })
+                                                    }
+                                                    <button onClick={DadosComida} type="button">adicionar comida!</button>
                                                 </div>
-
-                                                <label>- Comida {index + 1}:</label>
-                                                <div className="card-row">
-                                                    <label>-- nome:</label>
-                                                    <input key={index} className={`horario`} type="text" placeholder='exemplo: comidas' />
-                                                </div>
-                                                <div className="card-row">
-                                                    <label>-- gramas:</label>
-                                                    <input key={index} className={`horario`} type="text" placeholder='exemplo: comidas' />
-                                                </div>
-
-                                            </div>
-                                        )
-                                    })
-                                }
+                                            )
+                                        })
+                                    }
+                                </div>
                                 <div className="card-row">
-                                    <input className={`${props.dia} horario princ`} type="text" placeholder='almoço' />
+                                    <input className={`${props.dia} card-input princ`} type="text" placeholder='almoço' />
                                     <button onClick={Dados} type="button">adicionar horario!</button>
                                 </div>
                             </div>
 
                             : <div className="card-row">
-                                <input className={`${props.dia} horario princ`} type="text" placeholder='almoço' />
+                                <input className={`${props.dia} card-input princ`} type="text" placeholder='almoço' />
                                 <button onClick={Dados} type="button">adicionar horario!</button>
                             </div>
                     }
                 </div>
-                <button type="button">Salvar Dados!</button>
+                <button onClick={SalvarDados} type="button">Salvar Dados!</button>
             </form>
         </div>
     );

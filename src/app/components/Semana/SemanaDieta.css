@@ -1,6 +1,6 @@
 .cards{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     gap:15px;
     align-items: center;
     justify-content: space-around;
@@ -13,8 +13,7 @@
     border-radius: 18px;
     padding: 10px;
     flex: 1;
-    min-width: 15em;
-    max-width: 20em;
+    width: 100%;
 }
 .semana-card form{
     display: flex;
@@ -27,8 +26,9 @@
     width: 100%;
     gap: 10px;
     font-size: 1em;
+
 }
-.semana-card form .horario{
+.semana-card form .card-input{
     background-color: rgba(255, 255, 255, 0);
     border: none;
     flex: 1;
@@ -43,6 +43,14 @@
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    width: 100%;
+}
+.card-inputs .cards{
+    display: flex;
+    align-items: center;
+    justify-content: initial;
+    flex-direction: row;
+    gap: 1rem;
 }
 
 .card-content{
@@ -53,14 +61,25 @@
 }
 
 .semana-card .conteudo{
-height: auto;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+
 }
 
-.card-hora{
+.cards .card-hora{
     padding: 8px;
     border-radius: 10px;
     border: 1px solid black;
+    max-width: 19rem;
+
 }
 .card-row h3{
     font-size: 1em;
+}
+.card-hora .comida{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
 }
