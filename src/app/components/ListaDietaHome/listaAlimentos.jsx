@@ -25,8 +25,8 @@ export default function ListaAlimentos() {
         <div className='dieta'>
             <h2>Suas dietas:</h2>
             {
-                dietas.map(dieta => {
-                    return  <Semana data-anime key={dieta.id} dia={dieta.dia} text={dieta.horarios} />
+                dietas.map((dieta, index) => {
+                    return  <Semana data-anime key={index} dia={dieta.dia} text={dieta.horarios} />
                 })
             }
             

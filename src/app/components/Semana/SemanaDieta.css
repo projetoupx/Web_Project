@@ -21,25 +21,46 @@
     flex-direction: column;
     gap: 10px;
 }
-.semana-card form .form-horarios{
+.semana-card form .card-row{
     display: flex;
     flex-direction: row;
+    width: 100%;
     gap: 10px;
+    font-size: 1em;
 }
 .semana-card form .horario{
     background-color: rgba(255, 255, 255, 0);
     border: none;
+    flex: 1;
     border-bottom: 1px solid black;
+    &:disabled{
+        background-color: rgb(212, 212, 212);
+        color: rgb(98, 98, 98);
+    }
 }
 
-.pcard-inputs{
+.card-inputs{
     display: flex;
     flex-direction: column;
-    width: 50%;
+    gap: 1rem;
 }
 
 .card-content{
+    flex: 1 ;
     display: flex;
     flex-direction: column;
-    width: 50%;
+    width: 100%;
+}
+
+.semana-card .conteudo{
+height: auto;
+}
+
+.card-hora{
+    padding: 8px;
+    border-radius: 10px;
+    border: 1px solid black;
+}
+.card-row h3{
+    font-size: 1em;
 }

@@ -35,14 +35,12 @@ export default function Cadastro() {
             .then(data => {
                 const uid = data.user.uid;
                 const docData = {
-                    dieta: {
-                        segunda: {
-                            id: 1,
-                            dia: "segunda",
-                            horarios: ["adicione uma dieta!"],
-                            nome:''
+                    dieta: [
+                        {
+                            dia: "Segunda",
+                            horarios: {horarios: {almoço: ["adicione sua dieta"]}},
                         }
-                    }
+                    ]
                 };
                 setDoc(doc(db, "users", uid), docData);
 
