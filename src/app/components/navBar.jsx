@@ -17,8 +17,8 @@ export default function NavBar({setType}) {
             <nav>
                 <Link className='header-button' to="../home" id="logo">NutriView</Link>
                 <div className= "button-a">
-                    <button className='header-button' onClick={() => setType("dieta")}>sua dieta</button>
-                    <button className='header-button' onClick={() => setType("mont")}>suas trocas</button>
+                    <button className='header-button' onClick={() => setType("dieta")}>home</button>
+                    <button className='header-button' onClick={() => setType("mont")}>sua dieta</button>
                     <Link onClick={sair} className='header-button' to="../">sair</Link>
                 </div>
             </nav>

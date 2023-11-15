@@ -1,0 +1,71 @@
+.trocas{
+    width: 100%;
+}
+
+.name{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: first baseline;
+    gap: 5px;
+}
+
+.suasTrocas{
+    border: 1px black solid;
+    border-radius: 10px;
+    width: 100%;
+    padding: .8rem;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+
+    &>div{
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+}
+
+.cardTrocas{
+    border: 1px solid black;
+    padding: 5px;
+    border-radius: 10px;
+}
+.formPesq{
+    width: 100%;
+    display: flex;
+    gap: 5px;
+}
+.pesquisa{
+    border-radius: 5px;
+    flex:2;
+    background-color: transparent;
+    border: 1px solid black;
+    padding: 3px;
+
+}
+.fbutton{
+    flex: 1;
+    background-color: transparent;
+    border: solid 1px black;
+    border-radius: 3px;
+    transition: all ease .2s;
+    cursor: pointer;
+    &:hover{
+        background-color: var(--color5-bg-color);
+    }
+}
+
+.results{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 5px;
+    & div:nth-child(1n){
+        flex: 1;
+        min-width: fit-content;
+        max-width: 100%;
+        
+    }
+}

@@ -38,9 +38,11 @@ export default function Cadastro() {
                     dieta: [
                         {
                             dia: "Segunda",
-                            horarios: {horarios: {almoço: ["adicione sua dieta"]}},
+                            horarios: {almoço: ["adicione sua dieta"]},
                         }
-                    ]
+                    ],
+                    nome:"user"
+                    
                 };
                 setDoc(doc(db, "users", uid), docData);
 

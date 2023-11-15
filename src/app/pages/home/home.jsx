@@ -8,6 +8,8 @@ import { doc, onSnapshot } from "firebase/firestore";
 import { db } from '../../config/firebase';
 import { AuthContext } from '../../context/auth';
 import SemanaDieta from '../../components/Semana/SemanaDieta';
+import Infos from '../../components/Page/Infos';
+import Trocas from '../../components/Page/Trocas';
 
 
 export default function Home() {
@@ -15,8 +17,9 @@ export default function Home() {
     const [nome,setNome] = useState('');
     const { usuario } = useContext(AuthContext);
     const user = usuario;
+    let horaAtual = new Date();
+    let hello;
 
-    
     useEffect(()=>{
         onSnapshot(doc(db, "users", user), (doc) => {
             let nome = doc.data().nome;
@@ -24,6 +27,13 @@ export default function Home() {
         });
     })
 
+    if(horaAtual.getHours() < 12 && horaAtual.getHours() > 6){
+        hello = `Good Morning ${nome}!!`
+    }else if(horaAtual.getHours() < 18 ){
+        hello = `Good Afternoon ${nome}!!`
+    }else{
+        hello = `Good Evening ${nome}!!`
+    }
     const setType = (childdata) => {
         setPag(childdata);
       }
@@ -35,8 +45,10 @@ export default function Home() {
                 <NavBar setType={setType}/>
                 <section className='home-container'>
                     <div className='home-conteudo'>
-                        <h1>Hello {nome}</h1>
-                        <FormCalculo/>
+                        <h1>{hello}!!</h1>
+                        {/* <FormCalculo/> */}
+                        {/* <Infos/> */}
+                        <Trocas/>
                     </div>
                     <ListaAlimentos />
                 </section>
