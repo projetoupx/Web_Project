@@ -45,6 +45,7 @@ export default function Trocas() {
                     setNome(valores.nome)
                     
                     // setValorAli(valores.${TipoAli})
+                    console.log(TipoAli)
                     let a = valores[TipoAli]
                     setValorAli(a)
                 }
@@ -74,11 +75,19 @@ export default function Trocas() {
             <div className="suasTrocas">
                 <div className="userTrocas">
                     <h2>Pesquisa:</h2>
+                    <div className="formPesq">
+                        <input id="pesquisa" onChange={(e) => setPesquisa(e.target.value)} type="text" className="pesquisa"/>
+                        <select onChange={(e) => setTipoAli(e.target.value)} id="esc" name="esc" className="pesquisa">
+                            <option value="proteinas">Proteinas</option>
+                            <option value="carboidratos">Carboidratos</option>
+                            <option value="caloria">Caloria</option>
+                        </select>
+                    </div>
                     {
                         pesquisa
                         ?
                         resultsPesq.map((valores, index) =>{
-                            if(index < 3){
+                            if(index < 1){
                             return(
                                  <div key={valores.id} className="cardTrocas">
                                     <div className="name">
@@ -93,19 +102,21 @@ export default function Trocas() {
                             )}
                         })   
                         :
-                        <div className="cardTrocas">
-                            <h3>Escreva o que procura!!</h3>
-                        </div>
+                        resultsPesq.map((valores, index) =>{
+                            if(index < 6){
+                            return(
+                                 <div key={valores.id} className="cardTrocas">
+                                    <div className="name">
+                                        <h3>{valores.nome}</h3>
+                                        <p>(100g)</p>
+                                    </div>
+                                    
+                                </div>
+                            )}
+                        })  
                         
                     }
-                    <div className="formPesq">
-                        <input id="pesquisa" onChange={(e) => setPesquisa(e.target.value)} type="text" className="pesquisa"/>
-                        <select onChange={setTipoAli} id="esc" name="esc" className="pesquisa">
-                            <option value="proteinas">Proteinas</option>
-                            <option value="carboidratos">Carboidratos</option>
-                            <option value="caloria">Caloria</option>
-                        </select>
-                    </div>
+                    
                 </div>
                 <div className="todasTrocas">
                 <h2>Substituiçoes:</h2>
@@ -118,9 +129,7 @@ export default function Trocas() {
                                     let res = valores[TipoAli]
                                     let sub = Math.round((valorAli*100)/res)
                                     // setValorAliPes(res)
-                                    console.log(sub)
-                                    
-                                   
+                                    console.log(res, TipoAli)
                                 return(
                                      <div key={valores.id} className="cardTrocas">
                                         <div className="name">
@@ -129,14 +138,14 @@ export default function Trocas() {
                                         </div>
                                         <p>proteinas: {valores.proteinas}g</p>
                                         <p>calorias: {valores.calorias}cal</p>
-                                    <p>carboidratos: {valores.carboidratos}g</p>
+                                        <p>carboidratos: {valores.carboidratos}g</p>
                                         <p>tipo: {valores.tipo}</p>
                                     </div>
                                 )}
                             })
                             :
                             results.map((valores, index) =>{
-                                if(index < 10){
+                                if(index < 6){
                                 return(
                                      <div key={valores.id} className="cardTrocas">
                                         <h3>{valores.nome}</h3>
