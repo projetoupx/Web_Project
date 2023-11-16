@@ -5,6 +5,9 @@ export default function Banner() {
     return (
         <section className="container">
             <div id="banner">
+            {/* <video autoPlay muted loop class="video" id="myVideo">
+                <source src="muvies/coverr-vegetable-stand.mp4" type="video/mp4"/>
+            </video> */}
                 <div className="banner-text">
                     <div className='text'>
                         <h1 typing-animation="2.8" >Dieta não precisa ser ruim.</h1>
