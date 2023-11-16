@@ -27,7 +27,7 @@ export default function Home() {
         });
     })
 
-    if(horaAtual.getHours() < 12 && horaAtual.getHours() > 6){
+    if(horaAtual.getHours() < 12){
         hello = `Good Morning ${nome}!!`
     }else if(horaAtual.getHours() < 18 ){
         hello = `Good Afternoon ${nome}!!`

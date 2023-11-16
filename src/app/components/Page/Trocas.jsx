@@ -43,7 +43,7 @@ export default function Trocas() {
         
         docSnap.then(async function(resultado){
             await resultado.forEach(valor =>{
-                if(valor.data().tipo === tipo){
+                if(valor.data().tipo === tipo && pesquisa){
                     lista.push({
                         id:valor.id,
                         nome:valor.data().nome,
@@ -52,7 +52,16 @@ export default function Trocas() {
                         calorias:valor.data().calorias,
                         tipo:valor.data().tipo
                     })
-                }
+                }else if(pesquisa === "")(
+                    lista.push({
+                        id:valor.id,
+                        nome:valor.data().nome,
+                        proteinas:valor.data().proteinas,
+                        carboidratos:valor.data().carboidratos,
+                        calorias:valor.data().calorias,
+                        tipo:valor.data().tipo
+                    })
+                )
             })
             setResults(lista)
             resultsPesq.map((valores, index) =>{
@@ -122,7 +131,7 @@ export default function Trocas() {
                 <h2>Substituiçoes:</h2>
                     <div className="results">
                         {
-                            tipo && pesquisa
+                            pesquisa
                             ?
                             results.map((valores, index) =>{
                                 if(index < 6 && valores.tipo === tipo && valores.nome !== nome){

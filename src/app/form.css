@@ -110,6 +110,7 @@ h1 {
     padding: 15px 30px;
     border-radius: 10px;
     text-align: center;
+    width: 100%;
 }
 
 .form-header svg{
