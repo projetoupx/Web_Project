@@ -80,7 +80,7 @@ export default function Trocas() {
                         <select onChange={(e) => setTipoAli(e.target.value)} id="esc" name="esc" className="pesquisa">
                             <option value="proteinas">Proteinas</option>
                             <option value="carboidratos">Carboidratos</option>
-                            <option value="caloria">Caloria</option>
+                            <option value="calorias">Calorias</option>
                         </select>
                     </div>
                     {
