@@ -45,10 +45,10 @@ export default function AboutUs() {
                         </div>
                     </div>
                     <div className='about-card'>
-                        <img src="#" alt="#" className='about-card-img' />
+                        <img src="../../imgs/fotosGrupo/fotoGiulia.jpg" alt="Foto Giuli" className='about-card-img' />
                         <div className="about-card-text">
                             <h3>Giulia Albuquerque</h3>
-                            <p>Veritas semper una est. Fallacia alia aliam trudit. Maior dolor obscurat minorem.</p>
+                            <p>18 anos, inglês avançado e gosto de jogar e ler livros</p>
                             <div className='about-button'>
                                 <Link to="https://www.linkedin.com/in/marisol-marques04/" className='button'><LinkedinLogo size={32}/>LinkedIn</Link>
                                 <Link to="https://github.com/thomazzsol" className='button'><GithubLogo size={32} />GitHub</Link>
@@ -59,7 +59,7 @@ export default function AboutUs() {
                         <img src="../../imgs/fotosGrupo/fotoCaio.jpg" alt="Foto Caio" className='about-card-img' />
                         <div className="about-card-text">
                             <h3>Caio Pohlmann</h3>
-                            <p>Veritas semper una est. Fallacia alia aliam trudit. Maior dolor obscurat minorem.</p>
+                            <p>20 anos, Cursando Engenharia da Computação na Facens, ama programar em web e ajudar os amigos!!</p>
                             <div className='about-button'>
                                 <Link to="https://www.linkedin.com/in/marisol-marques04/" className='button'><LinkedinLogo size={32}/>LinkedIn</Link>
                                 <Link to="https://github.com/thomazzsol" className='button'><GithubLogo size={32} />GitHub</Link>
