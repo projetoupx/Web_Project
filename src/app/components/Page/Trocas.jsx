@@ -16,7 +16,7 @@ export default function Trocas() {
     const [nome, setNome] = useState('')
 
     const [valorAli, setValorAli] = useState('')
-    const [valorAliPes, setValorAliPes] = useState('')
+
     const [TipoAli, setTipoAli] = useState('proteinas')
     
     const docRef = collection(db, "food")
@@ -25,32 +25,6 @@ export default function Trocas() {
     
 
     useEffect(function(){
-        
-        docSnap.then(async function(resultado){
-            await resultado.forEach(valor =>{
-                    lista.push({
-                        id:valor.id,
-                        nome:valor.data().nome,
-                        proteinas:valor.data().proteinas,
-                        carboidratos:valor.data().carboidratos,
-                        calorias:valor.data().calorias,
-                        tipo:valor.data().tipo
-                })
-
-            })
-            setResults(lista)
-            resultsPesq.map((valores, index) =>{
-                if(index < 1){
-                    setTipo(valores.tipo)
-                    setNome(valores.nome)
-                    
-                    // setValorAli(valores.${TipoAli})
-                    console.log(TipoAli)
-                    let a = valores[TipoAli]
-                    setValorAli(a)
-                }
-            }) 
-        })
         docSnap.then(async function(resultado){
             await resultado.forEach(valor =>{
                 if(valor.data().nome.indexOf(pesquisa) >= 0){
@@ -67,7 +41,33 @@ export default function Trocas() {
             setResultsPesq(listapes) 
         })
         
-    }, [pesquisa])
+        docSnap.then(async function(resultado){
+            await resultado.forEach(valor =>{
+                if(valor.data().tipo === tipo){
+                    lista.push({
+                        id:valor.id,
+                        nome:valor.data().nome,
+                        proteinas:valor.data().proteinas,
+                        carboidratos:valor.data().carboidratos,
+                        calorias:valor.data().calorias,
+                        tipo:valor.data().tipo
+                    })
+                }
+            })
+            setResults(lista)
+            resultsPesq.map((valores, index) =>{
+                if(index < 1){
+                    setTipo(valores.tipo)
+                    setNome(valores.nome)
+                    let a = valores[TipoAli]
+                    setValorAli(a)
+                }
+            }) 
+            
+        })
+        
+        
+    }, [pesquisa, TipoAli])
     
     return(
         <section className="trocas">
@@ -79,8 +79,8 @@ export default function Trocas() {
                         <input id="pesquisa" onChange={(e) => setPesquisa(e.target.value)} type="text" className="pesquisa"/>
                         <select onChange={(e) => setTipoAli(e.target.value)} id="esc" name="esc" className="pesquisa">
                             <option value="proteinas">Proteinas</option>
-                            <option value="carboidratos">Carboidratos</option>
                             <option value="calorias">Calorias</option>
+                            <option value="carboidratos">Carboidratos</option>
                         </select>
                     </div>
                     {
@@ -125,20 +125,21 @@ export default function Trocas() {
                             tipo && pesquisa
                             ?
                             results.map((valores, index) =>{
-                                if(index < 10 && valores.tipo === tipo && valores.nome !== nome){
+                                if(index < 6 && valores.tipo === tipo && valores.nome !== nome){
                                     let res = valores[TipoAli]
                                     let sub = Math.round((valorAli*100)/res)
-                                    // setValorAliPes(res)
-                                    console.log(res, TipoAli)
+                                    if(sub === Infinity){
+                                        sub = 100;
+                                    }
                                 return(
                                      <div key={valores.id} className="cardTrocas">
                                         <div className="name">
                                             <h3>{valores.nome}</h3>
                                             <p>({sub}g)</p>
                                         </div>
-                                        <p>proteinas: {valores.proteinas}g</p>
-                                        <p>calorias: {valores.calorias}cal</p>
-                                        <p>carboidratos: {valores.carboidratos}g</p>
+                                        <p>proteinas: {((sub * valores.proteinas)/100).toFixed(2)}g</p>
+                                        <p>calorias: {((sub * valores.calorias)/100).toFixed(2)}cal</p>
+                                        <p>carboidratos: {((sub * valores.carboidratos)/100).toFixed(2)}g</p>
                                         <p>tipo: {valores.tipo}</p>
                                     </div>
                                 )}
