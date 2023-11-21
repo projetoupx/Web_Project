@@ -7,7 +7,6 @@ import AboutUs from './components/aboutUs';
 
 export default function Site() {
 
-
     return (
         <>
             <Header />

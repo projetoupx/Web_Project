@@ -11,8 +11,6 @@ export default function SemanaDieta(props) {
     const { usuario } = useContext(AuthContext);
     const user = usuario;
 
-
-
     useEffect(function () {
         onSnapshot(doc(db, "users", user), (doc) => {
             const cards = Object.values(doc.data().dieta);
@@ -85,7 +83,7 @@ export default function SemanaDieta(props) {
                                                                         <h3>{itenName}:</h3>
                                                                     </div>
                                                                     {
-                                                                    Object.values(values).map((itens, index) => {
+                                                                    Object.values(values).map((itens) => {
                                                                         return(
                                                                         itens.map((text, index) => {
                                                                             return (

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "../Page/Page.css";
 import { collection, getDocs, query , where, orderBy, limit} from "firebase/firestore";
 import { db } from '../../config/firebase';
@@ -22,7 +22,6 @@ export default function Trocas() {
     const docRef = collection(db, "food")
     const docSnap = getDocs(docRef)
 
-    
 
     useEffect(function(){
         docSnap.then(async function(resultado){
@@ -74,9 +73,14 @@ export default function Trocas() {
             }) 
             
         })
-        
-        
-    }, [pesquisa, TipoAli])
+
+        }, [pesquisa, TipoAli])
+
+        useEffect(()=> {
+            const itens = document.querySelectorAll('[data-index]')
+            console.log(itens);
+        }, [])
+
     
     return(
         <section className="trocas">
@@ -92,39 +96,40 @@ export default function Trocas() {
                             <option value="carboidratos">Carboidratos</option>
                         </select>
                     </div>
-                    {
-                        pesquisa
-                        ?
-                        resultsPesq.map((valores, index) =>{
-                            if(index < 1){
-                            return(
-                                 <div key={valores.id} className="cardTrocas">
-                                    <div className="name">
-                                        <h3>{valores.nome}</h3>
-                                        <p>(100g)</p>
-                                    </div>
-                                    <p>proteinas: {valores.proteinas}g</p>
-                                    <p>calorias: {valores.calorias}cal</p>
-                                    <p>carboidratos: {valores.carboidratos}g</p>
-                                    <p>tipo: {valores.tipo}</p>
-                                </div>
-                            )}
-                        })   
-                        :
-                        resultsPesq.map((valores, index) =>{
-                            if(index < 6){
-                            return(
-                                 <div key={valores.id} className="cardTrocas">
-                                    <div className="name">
-                                        <h3>{valores.nome}</h3>
-                                        <p>(100g)</p>
-                                    </div>
-                                    
-                                </div>
-                            )}
-                        })  
-                        
-                    }
+                    <div className="slider">   
+                        <div className="slider-slid">
+                            {
+                                pesquisa
+                                ?
+                                resultsPesq.map((valores, index) =>{
+                                    if(index < 1){
+                                    return(
+                                         <div key={valores.id} className="cardTrocas">
+                                            <div className="name">
+                                                <h3>{valores.nome}</h3>
+                                                <p>(100g)</p>
+                                            </div>
+                                            <p>proteinas: {valores.proteinas}g</p>
+                                            <p>calorias: {valores.calorias}cal</p>
+                                            <p>carboidratos: {valores.carboidratos}g</p>
+                                            <p>tipo: {valores.tipo}</p>
+                                        </div>
+                                    )}
+                                })
+                                :
+                                resultsPesq.map((valores, index) =>{
+                                    return(
+                                         <div key={valores.id} className="cardTrocas" data-index={index}>
+                                            <div className="name">
+                                                <h3>{valores.nome}</h3>
+                                                <p>(100g)</p>
+                                            </div>
+                                        </div>
+                                    )
+                                })
+                            }
+                        </div>
+                    </div>
                     
                 </div>
                 <div className="todasTrocas">
@@ -158,7 +163,10 @@ export default function Trocas() {
                                 if(index < 6){
                                 return(
                                      <div key={valores.id} className="cardTrocas">
-                                        <h3>{valores.nome}</h3>
+                                        <div className="name">
+                                            <h3>{valores.nome}</h3>
+                                            <p>(100g)</p>
+                                        </div>
                                         <p>proteinas: {valores.proteinas}g</p>
                                         <p>calorias: {valores.calorias}cal</p>
                                         <p>carboidratos: {valores.carboidratos}g</p>

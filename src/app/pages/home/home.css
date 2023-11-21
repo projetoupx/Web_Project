@@ -17,3 +17,22 @@
     flex: 12;
     width: fit-content;
 }
+
+.lestDiv{
+    display: flex;
+    flex-direction: column;
+}
+
+.trocaInfos{
+    padding: 10px 10px;
+    background-color: transparent;
+    border: solid 1px black;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 10rem;
+    align-self: flex-end;
+    transition: all .3s;
+    &:hover{
+        background-color: var(--color5-bg-color);
+    }
+}

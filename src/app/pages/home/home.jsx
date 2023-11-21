@@ -4,7 +4,7 @@ import './home.css';
 import NavBar from '../../components/navBar';
 import ListaAlimentos from '../../components/ListaDietaHome/ListaAlimentos';
 import FormCalculo from '../../components/Calculo/FormCalculo';
-import { doc, onSnapshot } from "firebase/firestore";
+import { doc, onSnapshot, updateDoc} from "firebase/firestore";
 import { db } from '../../config/firebase';
 import { AuthContext } from '../../context/auth';
 import SemanaDieta from '../../components/Semana/SemanaDieta';
@@ -15,6 +15,7 @@ import Trocas from '../../components/Page/Trocas';
 export default function Home() {
     const [pag, setPag] = useState('dieta')
     const [nome,setNome] = useState('');
+    const [result,setResult] = useState('');
     const { usuario } = useContext(AuthContext);
     const user = usuario;
     let horaAtual = new Date();
@@ -22,17 +23,21 @@ export default function Home() {
 
     useEffect(()=>{
         onSnapshot(doc(db, "users", user), (doc) => {
-            let nome = doc.data().nome;
-            setNome(nome)
+            let nomer = doc.data().nome;
+            let resultr = doc.data().resultado;
+            setNome(nomer);
+            setResult(resultr);
         });
     })
 
-    if(horaAtual.getHours() < 12){
+    if(horaAtual.getHours() < 6){
+        hello = `Good Night ${nome}!!`
+    }else if(horaAtual.getHours() < 12){
         hello = `Good Morning ${nome}!!`
     }else if(horaAtual.getHours() < 18 ){
         hello = `Good Afternoon ${nome}!!`
     }else{
-        hello = `Good Evening ${nome}!!`
+        hello = `Good Evining ${nome}!!`
     }
     const setType = (childdata) => {
         setPag(childdata);
@@ -46,11 +51,42 @@ export default function Home() {
                 <section className='home-container'>
                     <div className='home-conteudo'>
                         <h1>{hello}!!</h1>
-                        {/* <FormCalculo/> */}
-                        {/* <Infos/> */}
+                        
+
+                        {result
+                        ?
+                        null
+                        :
+                        <FormCalculo/>
+                        }
+
                         <Trocas/>
+                        
+                        {result
+                        ?
+                        <Infos/>
+                        :
+                        null
+                        }
+                        
+                        
                     </div>
-                    <ListaAlimentos />
+                    <div className='lestDiv'>
+                        {result
+                            ?
+                            <button className='trocaInfos' onClick={() => {
+                                const docData = {
+                                    nome:nome,
+                                    resultado:0,
+                                    castCalo:0,
+                                };
+                                updateDoc(doc(db, "users", user), docData);
+                            }}>Novo Cadastro</button>
+                            :
+                            null
+                        }
+                        <ListaAlimentos />
+                    </div>
                 </section>
             </main>
         </div>

@@ -33,7 +33,7 @@ function App() {
     const elements = document.querySelectorAll('[data-anime]')
     elements.forEach((element) => myObserver.observe(element))
     
-})
+  })
   return (
     <BrowserRouter>
         <Routes>
