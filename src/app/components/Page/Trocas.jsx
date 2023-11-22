@@ -12,7 +12,7 @@ export default function Trocas() {
     let listapes = []
 
     const [pesquisa, setPesquisa] = useState('')
-    const [tipo, setTipo] = useState('')
+    const [tipo, setTipo] = useState('carne')
     const [nome, setNome] = useState('')
 
     const [valorAli, setValorAli] = useState('')
@@ -64,8 +64,7 @@ export default function Trocas() {
             })
             setResults(lista)
             resultsPesq.map((valores, index) =>{
-                if(index < 1){
-                    setTipo(valores.tipo)
+                if(index < 1){ 
                     setNome(valores.nome)
                     let a = valores[TipoAli]
                     setValorAli(a)
@@ -74,12 +73,15 @@ export default function Trocas() {
             
         })
 
-        }, [pesquisa, TipoAli])
+        }, [pesquisa, TipoAli, tipo])
 
-        useEffect(()=> {
-            const itens = document.querySelectorAll('[data-index]')
-            console.log(itens);
-        }, [])
+        // useEffect(()=> {
+        //     document.querySelector('.slider:last-child').remove();
+        //     var copy = document.querySelector(".slider-slid").cloneNode(true);
+        //     document.querySelector('.slider').appendChild(copy);
+
+        // }, [results])
+
 
     
     return(
@@ -90,14 +92,20 @@ export default function Trocas() {
                     <h2>Pesquisa:</h2>
                     <div className="formPesq">
                         <input id="pesquisa" onChange={(e) => setPesquisa(e.target.value)} type="text" className="pesquisa"/>
-                        <select onChange={(e) => setTipoAli(e.target.value)} id="esc" name="esc" className="pesquisa">
+                        <select onChange={(e) => setTipoAli(e.target.value)} id="esc" name="esc" className="pesquisaS">
                             <option value="proteinas">Proteinas</option>
                             <option value="calorias">Calorias</option>
                             <option value="carboidratos">Carboidratos</option>
                         </select>
+                        <select onChange={(e) => setTipo(e.target.value)} id="esc" name="esc" className="pesquisaS">
+                            <option value="carne">Carne</option>
+                            <option value="fruta">Fruta</option>
+                            <option value="lanche">Lanche</option>
+                            <option value="acomp">Acomp</option>
+                        </select>
                     </div>
                     <div className="slider">   
-                        <div className="slider-slid">
+                        <div id="slid" className="slider-slid">
                             {
                                 pesquisa
                                 ?
@@ -128,6 +136,7 @@ export default function Trocas() {
                                     )
                                 })
                             }
+                            
                         </div>
                     </div>
                     
@@ -138,8 +147,8 @@ export default function Trocas() {
                         {
                             pesquisa
                             ?
-                            results.map((valores, index) =>{
-                                if(index < 6 && valores.tipo === tipo && valores.nome !== nome){
+                            results.map((valores) =>{
+                                if(valores.tipo === tipo && valores.nome !== nome){
                                     let res = valores[TipoAli]
                                     let sub = Math.round((valorAli*100)/res)
                                     if(sub === Infinity){
@@ -160,7 +169,7 @@ export default function Trocas() {
                             })
                             :
                             results.map((valores, index) =>{
-                                if(index < 6){
+                                if(index < 9){
                                 return(
                                      <div key={valores.id} className="cardTrocas">
                                         <div className="name">

@@ -25,26 +25,22 @@ export default function FormCalculo() {
         if(sexo === "masculino"){
             numSexo = [88.36, 13.4, 4.8, 5.7];
             casSexo = [0.063, 2.896, 239];
-            if(tipo === "ND"){
-                numM=1.5;
-            }else if(tipo === "AM"){
-                numM=1.8;
-            }else if(tipo === "AI"){
-                numM =2.1;
-            }
 
         }
         else if(sexo === "feminino"){
             numSexo = [447.593, 9.247, 3.098, 4.33];
             casSexo = [0.062,  2.036, 239];
-            if(tipo === "ND"){
-                numM=1.6;
-            }else if(tipo === "AM"){
-                numM=1.6;
-            }else if(tipo === "AI"){
-                numM =1.8;
-            }
+            
         }
+
+        if(tipo === "ND"){
+            numM=1.2;
+        }else if(tipo === "AM"){
+            numM=1.5;
+        }else if(tipo === "AI"){
+            numM =1.8;
+        }
+
         let resultCalo = numSexo[0]+(numSexo[1]*peso)+(numSexo[2]*altura)-(numSexo[3]*idade);
 
         let castoCalo = ((casSexo[0] * peso + casSexo[1])*casSexo[2])*numM

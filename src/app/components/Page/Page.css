@@ -37,14 +37,23 @@
     display: flex;
     gap: 5px;
 }
+
 .pesquisa{
     border-radius: 5px;
-    flex:2;
+    flex:3;
     background-color: transparent;
     border: 1px solid black;
     padding: 3px;
-
 }
+.pesquisaS{
+    border-radius: 5px;
+    flex:1;
+    background-color: transparent;
+    border: 1px solid black;
+    padding: 3px;
+}
+
+
 .fbutton{
     flex: 1;
     background-color: transparent;
@@ -61,6 +70,8 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    max-height: 32em;
+    overflow-y: auto;
     gap: 5px;
     & div:nth-child(1n){
         flex: 1;
@@ -78,16 +89,20 @@
 .slider{
     overflow: hidden;
     flex: 1;
-    max-height: 24em;
+    max-height: 31em;
 }
 
-.slider-slid{
-    /* animation: 5s slide infinite linear; */
+/* .slider-slid{
+    animation: 30s slide infinite linear;
+} */
+
+#slid{
     display: flex;
     flex-direction: column;
     gap: 10px;
-    transform: translateY(calc(-50px * 0));
+    padding-bottom: 5px;
 }
+
 
 @keyframes slide{
     from{
